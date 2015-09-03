@@ -1,0 +1,19 @@
+﻿{
+  "version": "1.0.0-ci",
+  "authors": [ "Dusan Janosik" ],
+  "owners": [ "djanosik" ],
+  "projectUrl": "https://github.com/djanosik/Moon.Validation",
+  "iconUrl": "http://moontea.net/moon.png",
+  "description": "Extensions for DataAnnotations and .NET (ASP.NET, DNX, WPF) validation frameworks.",
+  "tags": [ "moontea", "validation" ],
+
+  "dependencies": {
+    "Moon.Contracts": "1.1.5"
+  },
+
+  "frameworks": {
+    "net451": { },
+    "dnx451": { },
+    "dotnet": { }
+  }
+}
