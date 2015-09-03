@@ -1,0 +1,22 @@
+﻿{
+  "version": "1.0.0-ci",
+  "authors": [ "Dusan Janosik" ],
+  "owners": [ "djanosik" ],
+  "projectUrl": "https://github.com/djanosik/Moon.Validation",
+  "iconUrl": "http://moontea.net/moon.png",
+  "description": "Extensions for WPF validation framework.",
+  "tags": [ "moontea", "wpf", "validation", "annotations" ],
+
+  "dependencies": {
+    "Moon.Validation": "1.0.0-ci"
+  },
+
+  "frameworks": {
+    "net451": {
+      "frameworkAssemblies": {
+        "PresentationFramework": "4.0.0.0",
+        "WindowsBase": "4.0.0.0"
+      }
+    }
+  }
+}
