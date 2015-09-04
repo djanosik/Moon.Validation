@@ -4,10 +4,11 @@
   "owners": [ "djanosik" ],
   "projectUrl": "https://github.com/djanosik/Moon.Validation",
   "iconUrl": "http://moontea.net/moon.png",
-  "description": "Makes Moon.Validation attributes localizable by using System.Resources.",
-  "tags": [ "moontea", "validation", "annotations", "resources" ],
+  "description": "Makes Moon.Validation attributes localizable by using Moon.Localization.",
+  "tags": [ "moontea", "validation", "annotations", "localization" ],
 
   "dependencies": {
+    "Moon.Localization": "1.4.2",
     "Moon.Validation": "1.0.0-ci"
   },
 

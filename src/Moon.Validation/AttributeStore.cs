@@ -12,52 +12,57 @@ namespace Moon.Validation
     /// </summary>
     class AttributeStore
     {
+        readonly ITextProvider textProvider;
         readonly IDictionary<Type, TypeItem> items = new Dictionary<Type, TypeItem>();
 
         /// <summary>
-        /// Gets the singleton <see cref="AttributeStore" />
+        /// Initializes a new instance of the <see cref="AttributeStore" /> class.
         /// </summary>
-        public static AttributeStore Instance { get; } = new AttributeStore();
+        /// <param name="textProvider">The validation text provider.</param>
+        public AttributeStore(ITextProvider textProvider)
+        {
+            this.textProvider = textProvider;
+        }
 
         /// <summary>
         /// Retrieves the display name associated with the given type.
         /// </summary>
-        /// <param name="context">The context that describes the type.</param>
-        public string GetTypeDisplayName(ValidationContext context)
+        /// <param name="objectContext">The context that describes the type.</param>
+        public string GetTypeDisplayName(ValidationContext objectContext)
         {
-            var typeItem = GetTypeItem(context.ObjectType);
+            var typeItem = GetTypeItem(objectContext.ObjectType);
             return typeItem.DisplayAttribute.Name;
         }
 
         /// <summary>
         /// Retrieves the type level validation attributes for the given type.
         /// </summary>
-        /// <param name="context">The context that describes the type.</param>
-        public IEnumerable<ValidationAttribute> GetTypeValidationAttributes(ValidationContext context)
+        /// <param name="objectContext">The context that describes the type.</param>
+        public IEnumerable<ValidationAttribute> GetTypeValidationAttributes(ValidationContext objectContext)
         {
-            var typeItem = GetTypeItem(context.ObjectType);
+            var typeItem = GetTypeItem(objectContext.ObjectType);
             return typeItem.ValidationAttributes;
         }
 
         /// <summary>
         /// Retrieves the display name associated with the given property.
         /// </summary>
-        /// <param name="context">The context that describes the property.</param>
-        public string GetPropertyDisplayName(ValidationContext context)
+        /// <param name="propertyContext">The context that describes the property.</param>
+        public string GetPropertyDisplayName(ValidationContext propertyContext)
         {
-            var typeItem = GetTypeItem(context.ObjectType);
-            var propertyItem = typeItem.GetPropertyItem(context.MemberName);
+            var typeItem = GetTypeItem(propertyContext.ObjectType);
+            var propertyItem = typeItem.GetPropertyItem(propertyContext.MemberName);
             return propertyItem.DisplayAttribute.Name;
         }
 
         /// <summary>
         /// Retrieves the set of validation attributes for the property.
         /// </summary>
-        /// <param name="context">The context that describes the property.</param>
-        public IEnumerable<ValidationAttribute> GetPropertyValidationAttributes(ValidationContext context)
+        /// <param name="propertyContext">The context that describes the property.</param>
+        public IEnumerable<ValidationAttribute> GetPropertyValidationAttributes(ValidationContext propertyContext)
         {
-            var typeItem = GetTypeItem(context.ObjectType);
-            var propertyItem = typeItem.GetPropertyItem(context.MemberName);
+            var typeItem = GetTypeItem(propertyContext.ObjectType);
+            var propertyItem = typeItem.GetPropertyItem(propertyContext.MemberName);
             return propertyItem.ValidationAttributes;
         }
 
@@ -69,8 +74,7 @@ namespace Moon.Validation
                 if (!items.TryGetValue(type, out item))
                 {
                     var attributes = CustomAttributeExtensions.GetCustomAttributes(type.GetTypeInfo(), true);
-                    item = new TypeItem(type, attributes);
-                    items[type] = item;
+                    items[type] = item = new TypeItem(type, attributes, textProvider);
                 }
                 return item;
             }
@@ -78,9 +82,16 @@ namespace Moon.Validation
 
         abstract class StoreItem
         {
+            protected StoreItem(ITextProvider textProvider)
+            {
+                TextProvider = textProvider;
+            }
+
             public DisplayAttribute DisplayAttribute { get; protected set; }
 
             public IEnumerable<ValidationAttribute> ValidationAttributes { get; protected set; }
+
+            public ITextProvider TextProvider { get; }
 
             protected DisplayAttribute GetDisplayAttribute(IEnumerable<Attribute> attributes, Type objectType, string propertyName = null)
             {
@@ -95,8 +106,8 @@ namespace Moon.Validation
                 displayAttribute.ResourceType = null;
 
                 displayAttribute.Name = !string.IsNullOrWhiteSpace(propertyName)
-                    ? ValidationTexts.GetDisplayName(objectType, propertyName)
-                    : ValidationTexts.GetDisplayName(objectType);
+                    ? TextProvider.GetDisplayName(objectType, propertyName)
+                    : TextProvider.GetDisplayName(objectType);
 
                 return displayAttribute;
             }
@@ -117,8 +128,8 @@ namespace Moon.Validation
                     attribute.ErrorMessageResourceName = null;
 
                     attribute.ErrorMessage = !string.IsNullOrWhiteSpace(propertyName)
-                        ? ValidationTexts.GetErrorMessage(objectType, propertyName, validatorName, messageKey)
-                        : ValidationTexts.GetErrorMessage(objectType, validatorName, messageKey);
+                        ? TextProvider.GetErrorMessage(objectType, propertyName, validatorName, messageKey)
+                        : TextProvider.GetErrorMessage(objectType, validatorName, messageKey);
 
                     if (attribute.ErrorMessage == null)
                     {
@@ -138,7 +149,8 @@ namespace Moon.Validation
             readonly object syncRoot = new object();
             Dictionary<string, PropertyItem> propertyItems;
 
-            public TypeItem(Type objectType, IEnumerable<Attribute> attributes)
+            public TypeItem(Type objectType, IEnumerable<Attribute> attributes, ITextProvider textProvider)
+                : base(textProvider)
             {
                 this.objectType = objectType;
 
@@ -177,7 +189,7 @@ namespace Moon.Validation
                 foreach (var property in properties)
                 {
                     var attributes = CustomAttributeExtensions.GetCustomAttributes(property, true);
-                    items[property.Name] = new PropertyItem(objectType, property.Name, attributes);
+                    items[property.Name] = new PropertyItem(objectType, property.Name, attributes, TextProvider);
                 }
 
                 return items;
@@ -192,7 +204,8 @@ namespace Moon.Validation
 
         class PropertyItem : StoreItem
         {
-            public PropertyItem(Type objectType, string propertyName, IEnumerable<Attribute> attributes)
+            public PropertyItem(Type objectType, string propertyName, IEnumerable<Attribute> attributes, ITextProvider textProvider)
+                : base(textProvider)
             {
                 ValidationAttributes = GetValidationAttributes(attributes, objectType, propertyName);
                 DisplayAttribute = GetDisplayAttribute(attributes, objectType, propertyName);

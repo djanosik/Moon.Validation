@@ -34,6 +34,58 @@
           "lib/net451/Moon.Contracts.dll": {}
         }
       },
+      "Moon.IO/1.1.5": {
+        "dependencies": {
+          "Moon.Threading": "1.1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Moon.IO.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Moon.IO.dll": {}
+        }
+      },
+      "Moon.IO.FileSystem/1.1.5": {
+        "dependencies": {
+          "Moon.IO": "1.1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Moon.IO.FileSystem.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Moon.IO.FileSystem.dll": {}
+        }
+      },
+      "Moon.Localization/1.4.2": {
+        "dependencies": {
+          "Moon.Collections": "1.1.5",
+          "Moon.IO.FileSystem": "1.1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Moon.Localization.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Moon.Localization.dll": {}
+        }
+      },
       "Moon.Runtime/1.1.5": {
         "dependencies": {
           "Moon.Contracts": "1.1.5"
@@ -49,6 +101,23 @@
         },
         "runtime": {
           "lib/net451/Moon.Runtime.dll": {}
+        }
+      },
+      "Moon.Threading/1.1.5": {
+        "dependencies": {
+          "Moon.Runtime": "1.1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Moon.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Moon.Threading.dll": {}
         }
       }
     },
@@ -84,6 +153,58 @@
           "lib/dnx451/Moon.Contracts.dll": {}
         }
       },
+      "Moon.IO/1.1.5": {
+        "dependencies": {
+          "Moon.Threading": "1.1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Moon.IO.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Moon.IO.dll": {}
+        }
+      },
+      "Moon.IO.FileSystem/1.1.5": {
+        "dependencies": {
+          "Moon.IO": "1.1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Moon.IO.FileSystem.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Moon.IO.FileSystem.dll": {}
+        }
+      },
+      "Moon.Localization/1.4.2": {
+        "dependencies": {
+          "Moon.Collections": "1.1.5",
+          "Moon.IO.FileSystem": "1.1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Moon.Localization.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Moon.Localization.dll": {}
+        }
+      },
       "Moon.Runtime/1.1.5": {
         "dependencies": {
           "Moon.Contracts": "1.1.5"
@@ -99,6 +220,23 @@
         },
         "runtime": {
           "lib/dnx451/Moon.Runtime.dll": {}
+        }
+      },
+      "Moon.Threading/1.1.5": {
+        "dependencies": {
+          "Moon.Runtime": "1.1.5"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Moon.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Moon.Threading.dll": {}
         }
       }
     },
@@ -127,6 +265,43 @@
           "lib/dotnet/Moon.Contracts.dll": {}
         }
       },
+      "Moon.IO/1.1.5": {
+        "dependencies": {
+          "Moon.Threading": "1.1.5"
+        },
+        "compile": {
+          "lib/dotnet/Moon.IO.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Moon.IO.dll": {}
+        }
+      },
+      "Moon.IO.FileSystem/1.1.5": {
+        "dependencies": {
+          "Moon.IO": "1.1.5",
+          "System.IO.FileSystem": "4.0.0"
+        },
+        "compile": {
+          "lib/dotnet/Moon.IO.FileSystem.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Moon.IO.FileSystem.dll": {}
+        }
+      },
+      "Moon.Localization/1.4.2": {
+        "dependencies": {
+          "Moon.Collections": "1.1.5",
+          "Moon.IO.FileSystem": "1.1.5",
+          "System.Collections.Concurrent": "4.0.10",
+          "System.Globalization": "4.0.10"
+        },
+        "compile": {
+          "lib/dotnet/Moon.Localization.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Moon.Localization.dll": {}
+        }
+      },
       "Moon.Runtime/1.1.5": {
         "dependencies": {
           "Moon.Contracts": "1.1.5",
@@ -139,12 +314,43 @@
           "lib/dotnet/Moon.Runtime.dll": {}
         }
       },
+      "Moon.Threading/1.1.5": {
+        "dependencies": {
+          "Moon.Runtime": "1.1.5",
+          "System.Threading.Tasks": "4.0.10"
+        },
+        "compile": {
+          "lib/dotnet/Moon.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Moon.Threading.dll": {}
+        }
+      },
       "System.Collections/4.0.10": {
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
         "compile": {
           "ref/dotnet/System.Collections.dll": {}
+        }
+      },
+      "System.Collections.Concurrent/4.0.10": {
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Diagnostics.Debug": "4.0.10",
+          "System.Diagnostics.Tracing": "4.0.20",
+          "System.Globalization": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Threading": "4.0.10",
+          "System.Threading.Tasks": "4.0.10"
+        },
+        "compile": {
+          "ref/dotnet/System.Collections.Concurrent.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.Collections.Concurrent.dll": {}
         }
       },
       "System.ComponentModel/4.0.0": {
@@ -195,6 +401,14 @@
           "ref/dotnet/System.Diagnostics.Tools.dll": {}
         }
       },
+      "System.Diagnostics.Tracing/4.0.20": {
+        "dependencies": {
+          "System.Runtime": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet/System.Diagnostics.Tracing.dll": {}
+        }
+      },
       "System.Globalization/4.0.10": {
         "dependencies": {
           "System.Runtime": "4.0.0"
@@ -211,6 +425,30 @@
         },
         "compile": {
           "ref/dotnet/System.IO.dll": {}
+        }
+      },
+      "System.IO.FileSystem/4.0.0": {
+        "dependencies": {
+          "System.IO": "4.0.0",
+          "System.IO.FileSystem.Primitives": "4.0.0",
+          "System.Runtime": "4.0.0",
+          "System.Runtime.Handles": "4.0.0",
+          "System.Text.Encoding": "4.0.0",
+          "System.Threading.Tasks": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet/System.IO.FileSystem.dll": {}
+        }
+      },
+      "System.IO.FileSystem.Primitives/4.0.0": {
+        "dependencies": {
+          "System.Runtime": "4.0.20"
+        },
+        "compile": {
+          "ref/dotnet/System.IO.FileSystem.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/System.IO.FileSystem.Primitives.dll": {}
         }
       },
       "System.Linq/4.0.0": {
@@ -287,6 +525,14 @@
           "ref/dotnet/System.Runtime.Extensions.dll": {}
         }
       },
+      "System.Runtime.Handles/4.0.0": {
+        "dependencies": {
+          "System.Runtime": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet/System.Runtime.Handles.dll": {}
+        }
+      },
       "System.Text.Encoding/4.0.0": {
         "dependencies": {
           "System.Runtime": "4.0.0"
@@ -320,7 +566,7 @@
           "ref/dotnet/System.Threading.dll": {}
         }
       },
-      "System.Threading.Tasks/4.0.0": {
+      "System.Threading.Tasks/4.0.10": {
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -361,6 +607,51 @@
         "Moon.Contracts.nuspec"
       ]
     },
+    "Moon.IO/1.1.5": {
+      "serviceable": true,
+      "sha512": "sJwihimgBmQHCCgpUGT6i/AALv+1WKfwwTClMxb5WXvF204SpK4Ge/2UhTByaEmi+VxNAAEFABGaNfcMwJMGPg==",
+      "files": [
+        "lib/dnx451/Moon.IO.dll",
+        "lib/dnx451/Moon.IO.xml",
+        "lib/dotnet/Moon.IO.dll",
+        "lib/dotnet/Moon.IO.xml",
+        "lib/net451/Moon.IO.dll",
+        "lib/net451/Moon.IO.xml",
+        "Moon.IO.1.1.5.nupkg",
+        "Moon.IO.1.1.5.nupkg.sha512",
+        "Moon.IO.nuspec"
+      ]
+    },
+    "Moon.IO.FileSystem/1.1.5": {
+      "serviceable": true,
+      "sha512": "k1AYc6w8dfaxxUhSEEGSxPOyvucExdVMnABa3eEQom9hGgazarm7RJ5MoRjpeAdqMrRpb02vIUYBbchF+tUYrQ==",
+      "files": [
+        "lib/dnx451/Moon.IO.FileSystem.dll",
+        "lib/dnx451/Moon.IO.FileSystem.xml",
+        "lib/dotnet/Moon.IO.FileSystem.dll",
+        "lib/dotnet/Moon.IO.FileSystem.xml",
+        "lib/net451/Moon.IO.FileSystem.dll",
+        "lib/net451/Moon.IO.FileSystem.xml",
+        "Moon.IO.FileSystem.1.1.5.nupkg",
+        "Moon.IO.FileSystem.1.1.5.nupkg.sha512",
+        "Moon.IO.FileSystem.nuspec"
+      ]
+    },
+    "Moon.Localization/1.4.2": {
+      "serviceable": true,
+      "sha512": "Nj1zL2PKlSTcPrASETFzftqftmHGHKr4XlkRmJ5LZy7XRUwpkYRZPU7oBnk3zIEUBQ0BG7qvJdElgAkdQIfh0A==",
+      "files": [
+        "lib/dnx451/Moon.Localization.dll",
+        "lib/dnx451/Moon.Localization.xml",
+        "lib/dotnet/Moon.Localization.dll",
+        "lib/dotnet/Moon.Localization.xml",
+        "lib/net451/Moon.Localization.dll",
+        "lib/net451/Moon.Localization.xml",
+        "Moon.Localization.1.4.2.nupkg",
+        "Moon.Localization.1.4.2.nupkg.sha512",
+        "Moon.Localization.nuspec"
+      ]
+    },
     "Moon.Runtime/1.1.5": {
       "serviceable": true,
       "sha512": "r8NmFTpWcyvXQppC4DAJW8xIBfhnGtxXKOuSbJUnUO67XlLoDKtQLyZUqTEVK72MaeHJdUt8kB1Qb3cBjiubXQ==",
@@ -374,6 +665,21 @@
         "Moon.Runtime.1.1.5.nupkg",
         "Moon.Runtime.1.1.5.nupkg.sha512",
         "Moon.Runtime.nuspec"
+      ]
+    },
+    "Moon.Threading/1.1.5": {
+      "serviceable": true,
+      "sha512": "KVmjSPe9TLSNbbvtjS3m7IA5tofUdVTPQQqw4gZt00bc/iyHqhpXY6VGSxUazdSjoAtWz/rwPUD1FxEsB8brLg==",
+      "files": [
+        "lib/dnx451/Moon.Threading.dll",
+        "lib/dnx451/Moon.Threading.xml",
+        "lib/dotnet/Moon.Threading.dll",
+        "lib/dotnet/Moon.Threading.xml",
+        "lib/net451/Moon.Threading.dll",
+        "lib/net451/Moon.Threading.xml",
+        "Moon.Threading.1.1.5.nupkg",
+        "Moon.Threading.1.1.5.nupkg.sha512",
+        "Moon.Threading.nuspec"
       ]
     },
     "System.Collections/4.0.10": {
@@ -407,6 +713,37 @@
         "System.Collections.4.0.10.nupkg",
         "System.Collections.4.0.10.nupkg.sha512",
         "System.Collections.nuspec"
+      ]
+    },
+    "System.Collections.Concurrent/4.0.10": {
+      "serviceable": true,
+      "sha512": "ZtMEqOPAjAIqR8fqom9AOKRaB94a+emO2O8uOP6vyJoNswSPrbiwN7iH53rrVpvjMVx0wr4/OMpI7486uGZjbw==",
+      "files": [
+        "lib/dotnet/System.Collections.Concurrent.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.Collections.Concurrent.xml",
+        "ref/dotnet/es/System.Collections.Concurrent.xml",
+        "ref/dotnet/fr/System.Collections.Concurrent.xml",
+        "ref/dotnet/it/System.Collections.Concurrent.xml",
+        "ref/dotnet/ja/System.Collections.Concurrent.xml",
+        "ref/dotnet/ko/System.Collections.Concurrent.xml",
+        "ref/dotnet/ru/System.Collections.Concurrent.xml",
+        "ref/dotnet/System.Collections.Concurrent.dll",
+        "ref/dotnet/System.Collections.Concurrent.xml",
+        "ref/dotnet/zh-hans/System.Collections.Concurrent.xml",
+        "ref/dotnet/zh-hant/System.Collections.Concurrent.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.Collections.Concurrent.4.0.10.nupkg",
+        "System.Collections.Concurrent.4.0.10.nupkg.sha512",
+        "System.Collections.Concurrent.nuspec"
       ]
     },
     "System.ComponentModel/4.0.0": {
@@ -538,6 +875,39 @@
         "System.Diagnostics.Tools.nuspec"
       ]
     },
+    "System.Diagnostics.Tracing/4.0.20": {
+      "serviceable": true,
+      "sha512": "gn/wexGHc35Fv++5L1gYHMY5g25COfiZ0PGrL+3PfwzoJd4X2LbTAm/U8d385SI6BKQBI/z4dQfvneS9J27+Tw==",
+      "files": [
+        "lib/DNXCore50/System.Diagnostics.Tracing.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/_._",
+        "lib/netcore50/System.Diagnostics.Tracing.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/es/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/fr/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/it/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/ja/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/ko/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/ru/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/System.Diagnostics.Tracing.dll",
+        "ref/dotnet/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/zh-hans/System.Diagnostics.Tracing.xml",
+        "ref/dotnet/zh-hant/System.Diagnostics.Tracing.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "runtimes/win8-aot/lib/netcore50/System.Diagnostics.Tracing.dll",
+        "System.Diagnostics.Tracing.4.0.20.nupkg",
+        "System.Diagnostics.Tracing.4.0.20.nupkg.sha512",
+        "System.Diagnostics.Tracing.nuspec"
+      ]
+    },
     "System.Globalization/4.0.10": {
       "sha512": "kzRtbbCNAxdafFBDogcM36ehA3th8c1PGiz8QRkZn8O5yMBorDHSK8/TGJPYOaCS5zdsGk0u9qXHnW91nqy7fw==",
       "files": [
@@ -615,6 +985,69 @@
         "System.IO.4.0.0.nupkg",
         "System.IO.4.0.0.nupkg.sha512",
         "System.IO.nuspec"
+      ]
+    },
+    "System.IO.FileSystem/4.0.0": {
+      "serviceable": true,
+      "sha512": "eo05SPWfG+54UA0wxgRIYOuOslq+2QrJLXZaJDDsfLXG15OLguaItW39NYZTqUb4DeGOkU4R0wpOLOW4ynMUDQ==",
+      "files": [
+        "lib/DNXCore50/System.IO.FileSystem.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.IO.FileSystem.dll",
+        "lib/netcore50/System.IO.FileSystem.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.IO.FileSystem.xml",
+        "ref/dotnet/es/System.IO.FileSystem.xml",
+        "ref/dotnet/fr/System.IO.FileSystem.xml",
+        "ref/dotnet/it/System.IO.FileSystem.xml",
+        "ref/dotnet/ja/System.IO.FileSystem.xml",
+        "ref/dotnet/ko/System.IO.FileSystem.xml",
+        "ref/dotnet/ru/System.IO.FileSystem.xml",
+        "ref/dotnet/System.IO.FileSystem.dll",
+        "ref/dotnet/System.IO.FileSystem.xml",
+        "ref/dotnet/zh-hans/System.IO.FileSystem.xml",
+        "ref/dotnet/zh-hant/System.IO.FileSystem.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.IO.FileSystem.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.IO.FileSystem.4.0.0.nupkg",
+        "System.IO.FileSystem.4.0.0.nupkg.sha512",
+        "System.IO.FileSystem.nuspec"
+      ]
+    },
+    "System.IO.FileSystem.Primitives/4.0.0": {
+      "serviceable": true,
+      "sha512": "7pJUvYi/Yq3A5nagqCCiOw3+aJp3xXc/Cjr8dnJDnER3/6kX3LEencfqmXUcPl9+7OvRNyPMNhqsLAcMK6K/KA==",
+      "files": [
+        "lib/dotnet/System.IO.FileSystem.Primitives.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.IO.FileSystem.Primitives.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/es/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/fr/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/it/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/ja/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/ko/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/ru/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/System.IO.FileSystem.Primitives.dll",
+        "ref/dotnet/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/zh-hans/System.IO.FileSystem.Primitives.xml",
+        "ref/dotnet/zh-hant/System.IO.FileSystem.Primitives.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.IO.FileSystem.Primitives.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "System.IO.FileSystem.Primitives.4.0.0.nupkg",
+        "System.IO.FileSystem.Primitives.4.0.0.nupkg.sha512",
+        "System.IO.FileSystem.Primitives.nuspec"
       ]
     },
     "System.Linq/4.0.0": {
@@ -880,6 +1313,39 @@
         "System.Runtime.Extensions.nuspec"
       ]
     },
+    "System.Runtime.Handles/4.0.0": {
+      "serviceable": true,
+      "sha512": "638VhpRq63tVcQ6HDb3um3R/J2BtR1Sa96toHo6PcJGPXEPEsleCuqhBgX2gFCz0y0qkutANwW6VPPY5wQu1XQ==",
+      "files": [
+        "lib/DNXCore50/System.Runtime.Handles.dll",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/_._",
+        "lib/netcore50/System.Runtime.Handles.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/dotnet/de/System.Runtime.Handles.xml",
+        "ref/dotnet/es/System.Runtime.Handles.xml",
+        "ref/dotnet/fr/System.Runtime.Handles.xml",
+        "ref/dotnet/it/System.Runtime.Handles.xml",
+        "ref/dotnet/ja/System.Runtime.Handles.xml",
+        "ref/dotnet/ko/System.Runtime.Handles.xml",
+        "ref/dotnet/ru/System.Runtime.Handles.xml",
+        "ref/dotnet/System.Runtime.Handles.dll",
+        "ref/dotnet/System.Runtime.Handles.xml",
+        "ref/dotnet/zh-hans/System.Runtime.Handles.xml",
+        "ref/dotnet/zh-hant/System.Runtime.Handles.xml",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "runtimes/win8-aot/lib/netcore50/System.Runtime.Handles.dll",
+        "System.Runtime.Handles.4.0.0.nupkg",
+        "System.Runtime.Handles.4.0.0.nupkg.sha512",
+        "System.Runtime.Handles.nuspec"
+      ]
+    },
     "System.Text.Encoding/4.0.0": {
       "sha512": "AMxFNOXpA6Ab8swULbXuJmoT2K5w6TnV3ObF5wsmEcIHQUJghoZtDVfVHb08O2wW15mOSI1i9Wg0Dx0pY13o8g==",
       "files": [
@@ -991,18 +1457,17 @@
         "System.Threading.nuspec"
       ]
     },
-    "System.Threading.Tasks/4.0.0": {
-      "sha512": "dA3y1B6Pc8mNt9obhEWWGGpvEakS51+nafXpmM/Z8IF847GErLXGTjdfA+AYEKszfFbH7SVLWUklXhYeeSQ1lw==",
+    "System.Threading.Tasks/4.0.10": {
+      "serviceable": true,
+      "sha512": "NOwJGDfk79jR0bnzosbXLVD/PdI8KzBeESoa3CofEM5v9R5EBfcI0Jyf18stx+0IYV9okmDIDxVtxq9TbnR9bQ==",
       "files": [
+        "lib/DNXCore50/System.Threading.Tasks.dll",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/win8/_._",
-        "lib/wp80/_._",
-        "lib/wpa81/_._",
+        "lib/net46/_._",
+        "lib/netcore50/System.Threading.Tasks.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "License.rtf",
         "ref/dotnet/de/System.Threading.Tasks.xml",
         "ref/dotnet/es/System.Threading.Tasks.xml",
         "ref/dotnet/fr/System.Threading.Tasks.xml",
@@ -1016,31 +1481,19 @@
         "ref/dotnet/zh-hant/System.Threading.Tasks.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/netcore50/de/System.Threading.Tasks.xml",
-        "ref/netcore50/es/System.Threading.Tasks.xml",
-        "ref/netcore50/fr/System.Threading.Tasks.xml",
-        "ref/netcore50/it/System.Threading.Tasks.xml",
-        "ref/netcore50/ja/System.Threading.Tasks.xml",
-        "ref/netcore50/ko/System.Threading.Tasks.xml",
-        "ref/netcore50/ru/System.Threading.Tasks.xml",
-        "ref/netcore50/System.Threading.Tasks.dll",
-        "ref/netcore50/System.Threading.Tasks.xml",
-        "ref/netcore50/zh-hans/System.Threading.Tasks.xml",
-        "ref/netcore50/zh-hant/System.Threading.Tasks.xml",
-        "ref/win8/_._",
-        "ref/wp80/_._",
-        "ref/wpa81/_._",
+        "ref/net46/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.Threading.Tasks.4.0.0.nupkg",
-        "System.Threading.Tasks.4.0.0.nupkg.sha512",
+        "runtimes/win8-aot/lib/netcore50/System.Threading.Tasks.dll",
+        "System.Threading.Tasks.4.0.10.nupkg",
+        "System.Threading.Tasks.4.0.10.nupkg.sha512",
         "System.Threading.Tasks.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
+      "Moon.Localization >= 1.4.2",
       "Moon.Validation >= 1.0.0-ci"
     ],
     ".NETFramework,Version=v4.5.1": [],

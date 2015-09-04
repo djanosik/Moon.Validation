@@ -4,16 +4,16 @@
   "owners": [ "djanosik" ],
   "projectUrl": "https://github.com/djanosik/Moon.Validation",
   "iconUrl": "http://moontea.net/moon.png",
-  "description": "Makes Moon.Validation attributes localizable by using System.Resources.",
-  "tags": [ "moontea", "validation", "annotations", "resources" ],
+  "description": "Extensions for ASP.NET MVC 6 validation framework.",
+  "tags": [ "moontea", "asp.net", "validation", "annotations" ],
 
   "dependencies": {
+    "Moon.AspNet.Mvc": "1.2.1",
     "Moon.Validation": "1.0.0-ci"
   },
 
   "frameworks": {
-    "net451": { },
     "dnx451": { },
-    "dotnet": { }
+    "dnxcore50": { }
   }
 }

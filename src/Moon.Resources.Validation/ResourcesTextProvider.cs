@@ -9,9 +9,9 @@ namespace Moon.Validation
     /// The convention-based provider which uses standard resources to provide error messages and
     /// display names.
     /// </summary>
-    public class ResourcesTextProvider : ValidationTextProvider
+    public class ResourcesTextProvider : TextProvider
     {
-        private readonly Type defaultResourceType;
+        readonly Type defaultResourceType;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ResourcesTextProvider" /> class.
@@ -136,16 +136,16 @@ namespace Moon.Validation
             return resourceManager.GetString(resourceKey);
         }
 
-        private MetadataAttribute GetMetadataAttribute(Type type)
+        ValidationResourcesAttribute GetMetadataAttribute(Type type)
         {
             var typeInfo = type.GetTypeInfo();
 
-            var attribute = typeInfo.GetCustomAttributes<MetadataAttribute>(true).FirstOrDefault();
-            attribute = attribute ?? typeInfo.Assembly.GetCustomAttributes<MetadataAttribute>().FirstOrDefault();
+            var attribute = typeInfo.GetCustomAttributes<ValidationResourcesAttribute>(true).FirstOrDefault();
+            attribute = attribute ?? typeInfo.Assembly.GetCustomAttributes<ValidationResourcesAttribute>().FirstOrDefault();
             return attribute;
         }
 
-        private Type GetResourceType(Type type)
+        Type GetResourceType(Type type)
         {
             var resourceType = defaultResourceType;
 
@@ -158,7 +158,7 @@ namespace Moon.Validation
             return resourceType;
         }
 
-        private bool HasProperty(Type type, string propertyName)
+        bool HasProperty(Type type, string propertyName)
         {
             if (type == null || propertyName == null)
             {
