@@ -8,7 +8,7 @@ namespace Moon.Localization.Validation
     /// The convention-based provider which uses <see cref="Resources" /> to provide error messages
     /// and display names.
     /// </summary>
-    public class ResourcesTextProvider : TextProvider
+    public class LocalizationTextProvider : TextProvider
     {
         /// <summary>
         /// Returns a display name for the given object type.

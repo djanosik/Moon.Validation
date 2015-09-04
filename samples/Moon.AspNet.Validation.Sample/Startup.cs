@@ -20,7 +20,7 @@ namespace Moon.AspNet.Validation.Sample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddValidation(new ResourcesTextProvider());
+            services.AddValidation(new LocalizationTextProvider());
 
             services.ConfigureMvcViews(o =>
             {
