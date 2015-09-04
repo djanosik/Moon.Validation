@@ -52,7 +52,7 @@ namespace Moon.Validation
         /// <para>
         /// This method evaluates all <see cref="ValidationAttribute" /> s attached to the object
         /// instance's type or it's properties. It will also execute the
-        /// <see cref="IValidatable.Validate" /> method.
+        /// <see cref="IValidatableObject.Validate" /> method.
         /// </para>
         /// <para>
         /// For any given property, if it has a <see cref="RequiredAttribute" /> that fails
@@ -83,8 +83,8 @@ namespace Moon.Validation
                 return results;
             }
 
-            // Step 3: Execute IValidatable.Validate implementation
-            var validatable = instance as IValidatable;
+            // Step 3: Execute IValidatableObject.Validate implementation
+            var validatable = instance as IValidatableObject;
 
             if (validatable != null)
             {
