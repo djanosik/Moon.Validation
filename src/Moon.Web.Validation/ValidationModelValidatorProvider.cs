@@ -36,11 +36,11 @@ namespace Moon.Web.Validation
                 attributes = attributes.Concat(new[] { new RequiredAttribute() });
             }
 
-            attributes = ModifyAttributes(metadata, attributes);
+            attributes = LocalizeErrorMessages(metadata, attributes);
             return base.GetValidators(metadata, context, attributes);
         }
 
-        IEnumerable<Attribute> ModifyAttributes(ModelMetadata metadata, IEnumerable<Attribute> attributes)
+        IEnumerable<Attribute> LocalizeErrorMessages(ModelMetadata metadata, IEnumerable<Attribute> attributes)
         {
             var validationAttributes = attributes.OfType<ValidationAttribute>()
                 .Where(x => string.IsNullOrEmpty(x.ErrorMessage));
