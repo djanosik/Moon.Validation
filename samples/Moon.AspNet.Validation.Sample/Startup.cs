@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.Mvc.Razor;
 using Microsoft.Framework.DependencyInjection;
 using Moon.AspNet.Mvc;
 using Moon.Localization;
@@ -19,14 +19,10 @@ namespace Moon.AspNet.Validation.Sample
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-            services.AddValidation(new LocalizationTextProvider());
+            services.AddMvc()
+                .AddValidation(new LocalizationTextProvider());
 
-            services.ConfigureMvcViews(o =>
-            {
-                o.ViewEngines.Clear();
-                o.ViewEngines.Add(typeof(PagesViewEngine));
-            });
+            services.AddSingleton<IRazorViewEngine, PagesViewEngine>();
 
             services.ConfigureRouting(o =>
             {

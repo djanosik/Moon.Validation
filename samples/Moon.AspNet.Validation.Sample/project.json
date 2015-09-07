@@ -3,10 +3,10 @@
   "webroot": "wwwroot",
 
   "dependencies": {
-    "Microsoft.AspNet.Server.IIS": "1.0.0-beta6",
-    "Moon.AspNet.Localization": "1.4.2",
+    "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
+    "Moon.AspNet.Localization": "1.4.4",
     "Moon.AspNet.Validation": "1.0.0-ci",
-    "Moon.Localization.Json": "1.4.2",
+    "Moon.Localization.Json": "1.4.4",
     "Moon.Localization.Validation": "1.0.0-ci"
   },
 

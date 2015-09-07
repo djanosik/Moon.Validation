@@ -3,9 +3,10 @@
   "version": 1,
   "targets": {
     ".NETFramework,Version=v4.5.1": {
-      "Moon.Collections/1.1.5": {
+      "Moon.Collections/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.1.5"
+          "Moon.Runtime": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -20,7 +21,8 @@
           "lib/net451/Moon.Collections.dll": {}
         }
       },
-      "Moon.Contracts/1.1.5": {
+      "Moon.Contracts/1.1.7": {
+        "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
           "mscorlib",
@@ -34,9 +36,10 @@
           "lib/net451/Moon.Contracts.dll": {}
         }
       },
-      "Moon.IO/1.1.5": {
+      "Moon.IO/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Threading": "1.1.5"
+          "Moon.Threading": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -51,9 +54,10 @@
           "lib/net451/Moon.IO.dll": {}
         }
       },
-      "Moon.IO.FileSystem/1.1.5": {
+      "Moon.IO.FileSystem/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.IO": "1.1.5"
+          "Moon.IO": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -68,10 +72,11 @@
           "lib/net451/Moon.IO.FileSystem.dll": {}
         }
       },
-      "Moon.Localization/1.4.2": {
+      "Moon.Localization/1.4.4": {
+        "type": "package",
         "dependencies": {
-          "Moon.Collections": "1.1.5",
-          "Moon.IO.FileSystem": "1.1.5"
+          "Moon.Collections": "1.1.7",
+          "Moon.IO.FileSystem": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -86,9 +91,10 @@
           "lib/net451/Moon.Localization.dll": {}
         }
       },
-      "Moon.Runtime/1.1.5": {
+      "Moon.Runtime/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.1.5"
+          "Moon.Contracts": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -103,9 +109,10 @@
           "lib/net451/Moon.Runtime.dll": {}
         }
       },
-      "Moon.Threading/1.1.5": {
+      "Moon.Threading/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.1.5"
+          "Moon.Runtime": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -119,12 +126,22 @@
         "runtime": {
           "lib/net451/Moon.Threading.dll": {}
         }
+      },
+      "Moon.Validation/1.0.0-ci": {
+        "type": "project",
+        "dependencies": {
+          "Moon.Collections": "1.1.7"
+        },
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ]
       }
     },
     "DNX,Version=v4.5.1": {
-      "Moon.Collections/1.1.5": {
+      "Moon.Collections/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.1.5"
+          "Moon.Runtime": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -139,7 +156,8 @@
           "lib/dnx451/Moon.Collections.dll": {}
         }
       },
-      "Moon.Contracts/1.1.5": {
+      "Moon.Contracts/1.1.7": {
+        "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
           "mscorlib",
@@ -153,9 +171,10 @@
           "lib/dnx451/Moon.Contracts.dll": {}
         }
       },
-      "Moon.IO/1.1.5": {
+      "Moon.IO/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Threading": "1.1.5"
+          "Moon.Threading": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -170,9 +189,10 @@
           "lib/dnx451/Moon.IO.dll": {}
         }
       },
-      "Moon.IO.FileSystem/1.1.5": {
+      "Moon.IO.FileSystem/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.IO": "1.1.5"
+          "Moon.IO": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -187,10 +207,11 @@
           "lib/dnx451/Moon.IO.FileSystem.dll": {}
         }
       },
-      "Moon.Localization/1.4.2": {
+      "Moon.Localization/1.4.4": {
+        "type": "package",
         "dependencies": {
-          "Moon.Collections": "1.1.5",
-          "Moon.IO.FileSystem": "1.1.5"
+          "Moon.Collections": "1.1.7",
+          "Moon.IO.FileSystem": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -205,9 +226,10 @@
           "lib/dnx451/Moon.Localization.dll": {}
         }
       },
-      "Moon.Runtime/1.1.5": {
+      "Moon.Runtime/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.1.5"
+          "Moon.Contracts": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -222,9 +244,10 @@
           "lib/dnx451/Moon.Runtime.dll": {}
         }
       },
-      "Moon.Threading/1.1.5": {
+      "Moon.Threading/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.1.5"
+          "Moon.Runtime": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -238,13 +261,23 @@
         "runtime": {
           "lib/dnx451/Moon.Threading.dll": {}
         }
+      },
+      "Moon.Validation/1.0.0-ci": {
+        "type": "project",
+        "dependencies": {
+          "Moon.Collections": "1.1.7"
+        },
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ]
       }
     },
     ".NETPlatform,Version=v5.0": {
-      "Moon.Collections/1.1.5": {
+      "Moon.Collections/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.1.5",
-          "System.Collections": "4.0.10"
+          "Moon.Runtime": "1.1.7",
+          "System.Collections": "4.0.11-beta-23225"
         },
         "compile": {
           "lib/dotnet/Moon.Collections.dll": {}
@@ -253,10 +286,12 @@
           "lib/dotnet/Moon.Collections.dll": {}
         }
       },
-      "Moon.Contracts/1.1.5": {
+      "Moon.Contracts/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "System.Linq": "4.0.0",
-          "System.Reflection": "4.0.10"
+          "System.Diagnostics.Tools": "4.0.1-beta-23225",
+          "System.Linq": "4.0.1-beta-23225",
+          "System.Reflection": "4.1.0-beta-23225"
         },
         "compile": {
           "lib/dotnet/Moon.Contracts.dll": {}
@@ -265,9 +300,10 @@
           "lib/dotnet/Moon.Contracts.dll": {}
         }
       },
-      "Moon.IO/1.1.5": {
+      "Moon.IO/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Threading": "1.1.5"
+          "Moon.Threading": "1.1.7"
         },
         "compile": {
           "lib/dotnet/Moon.IO.dll": {}
@@ -276,10 +312,11 @@
           "lib/dotnet/Moon.IO.dll": {}
         }
       },
-      "Moon.IO.FileSystem/1.1.5": {
+      "Moon.IO.FileSystem/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.IO": "1.1.5",
-          "System.IO.FileSystem": "4.0.0"
+          "Moon.IO": "1.1.7",
+          "System.IO.FileSystem": "4.0.1-beta-23225"
         },
         "compile": {
           "lib/dotnet/Moon.IO.FileSystem.dll": {}
@@ -288,12 +325,13 @@
           "lib/dotnet/Moon.IO.FileSystem.dll": {}
         }
       },
-      "Moon.Localization/1.4.2": {
+      "Moon.Localization/1.4.4": {
+        "type": "package",
         "dependencies": {
-          "Moon.Collections": "1.1.5",
-          "Moon.IO.FileSystem": "1.1.5",
-          "System.Collections.Concurrent": "4.0.10",
-          "System.Globalization": "4.0.10"
+          "Moon.Collections": "1.1.7",
+          "Moon.IO.FileSystem": "1.1.7",
+          "System.Collections.Concurrent": "4.0.11-beta-23225",
+          "System.Globalization": "4.0.11-beta-23225"
         },
         "compile": {
           "lib/dotnet/Moon.Localization.dll": {}
@@ -302,10 +340,11 @@
           "lib/dotnet/Moon.Localization.dll": {}
         }
       },
-      "Moon.Runtime/1.1.5": {
+      "Moon.Runtime/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.1.5",
-          "System.Runtime.Extensions": "4.0.10"
+          "Moon.Contracts": "1.1.7",
+          "System.Runtime.Extensions": "4.0.11-beta-23225"
         },
         "compile": {
           "lib/dotnet/Moon.Runtime.dll": {}
@@ -314,10 +353,11 @@
           "lib/dotnet/Moon.Runtime.dll": {}
         }
       },
-      "Moon.Threading/1.1.5": {
+      "Moon.Threading/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.1.5",
-          "System.Threading.Tasks": "4.0.10"
+          "Moon.Runtime": "1.1.7",
+          "System.Threading.Tasks": "4.0.11-beta-23225"
         },
         "compile": {
           "lib/dotnet/Moon.Threading.dll": {}
@@ -326,7 +366,16 @@
           "lib/dotnet/Moon.Threading.dll": {}
         }
       },
-      "System.Collections/4.0.10": {
+      "Moon.Validation/1.0.0-ci": {
+        "type": "project",
+        "dependencies": {
+          "Moon.Collections": "1.1.7",
+          "System.ComponentModel.Annotations": "4.0.11-beta-23225",
+          "System.Linq.Expressions": "4.0.11-beta-23225"
+        }
+      },
+      "System.Collections/4.0.11-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -334,7 +383,8 @@
           "ref/dotnet/System.Collections.dll": {}
         }
       },
-      "System.Collections.Concurrent/4.0.10": {
+      "System.Collections.Concurrent/4.0.11-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
           "System.Diagnostics.Debug": "4.0.10",
@@ -354,6 +404,7 @@
         }
       },
       "System.ComponentModel/4.0.0": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.20"
         },
@@ -364,7 +415,8 @@
           "lib/dotnet/System.ComponentModel.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.0.10": {
+      "System.ComponentModel.Annotations/4.0.11-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
           "System.ComponentModel": "4.0.0",
@@ -386,6 +438,7 @@
         }
       },
       "System.Diagnostics.Debug/4.0.10": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -393,7 +446,8 @@
           "ref/dotnet/System.Diagnostics.Debug.dll": {}
         }
       },
-      "System.Diagnostics.Tools/4.0.0": {
+      "System.Diagnostics.Tools/4.0.1-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -402,6 +456,7 @@
         }
       },
       "System.Diagnostics.Tracing/4.0.20": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -409,7 +464,8 @@
           "ref/dotnet/System.Diagnostics.Tracing.dll": {}
         }
       },
-      "System.Globalization/4.0.10": {
+      "System.Globalization/4.0.11-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -418,6 +474,7 @@
         }
       },
       "System.IO/4.0.0": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0",
           "System.Text.Encoding": "4.0.0",
@@ -427,7 +484,8 @@
           "ref/dotnet/System.IO.dll": {}
         }
       },
-      "System.IO.FileSystem/4.0.0": {
+      "System.IO.FileSystem/4.0.1-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.IO": "4.0.0",
           "System.IO.FileSystem.Primitives": "4.0.0",
@@ -441,6 +499,7 @@
         }
       },
       "System.IO.FileSystem.Primitives/4.0.0": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.20"
         },
@@ -451,7 +510,8 @@
           "lib/dotnet/System.IO.FileSystem.Primitives.dll": {}
         }
       },
-      "System.Linq/4.0.0": {
+      "System.Linq/4.0.1-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
           "System.Diagnostics.Debug": "4.0.10",
@@ -466,7 +526,8 @@
           "lib/dotnet/System.Linq.dll": {}
         }
       },
-      "System.Linq.Expressions/4.0.10": {
+      "System.Linq.Expressions/4.0.11-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Reflection": "4.0.0",
           "System.Runtime": "4.0.0"
@@ -475,7 +536,8 @@
           "ref/dotnet/System.Linq.Expressions.dll": {}
         }
       },
-      "System.Reflection/4.0.10": {
+      "System.Reflection/4.1.0-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.IO": "4.0.0",
           "System.Reflection.Primitives": "4.0.0",
@@ -486,6 +548,7 @@
         }
       },
       "System.Reflection.Extensions/4.0.0": {
+        "type": "package",
         "dependencies": {
           "System.Reflection": "4.0.0",
           "System.Runtime": "4.0.0"
@@ -495,6 +558,7 @@
         }
       },
       "System.Reflection.Primitives/4.0.0": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -503,6 +567,7 @@
         }
       },
       "System.Resources.ResourceManager/4.0.0": {
+        "type": "package",
         "dependencies": {
           "System.Globalization": "4.0.0",
           "System.Reflection": "4.0.0",
@@ -513,11 +578,13 @@
         }
       },
       "System.Runtime/4.0.20": {
+        "type": "package",
         "compile": {
           "ref/dotnet/System.Runtime.dll": {}
         }
       },
-      "System.Runtime.Extensions/4.0.10": {
+      "System.Runtime.Extensions/4.0.11-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.20"
         },
@@ -526,6 +593,7 @@
         }
       },
       "System.Runtime.Handles/4.0.0": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -534,6 +602,7 @@
         }
       },
       "System.Text.Encoding/4.0.0": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -542,6 +611,7 @@
         }
       },
       "System.Text.RegularExpressions/4.0.10": {
+        "type": "package",
         "dependencies": {
           "System.Collections": "4.0.10",
           "System.Globalization": "4.0.10",
@@ -558,6 +628,7 @@
         }
       },
       "System.Threading/4.0.10": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0",
           "System.Threading.Tasks": "4.0.0"
@@ -566,7 +637,8 @@
           "ref/dotnet/System.Threading.dll": {}
         }
       },
-      "System.Threading.Tasks/4.0.10": {
+      "System.Threading.Tasks/4.0.11-beta-23225": {
+        "type": "package",
         "dependencies": {
           "System.Runtime": "4.0.0"
         },
@@ -577,9 +649,14 @@
     }
   },
   "libraries": {
-    "Moon.Collections/1.1.5": {
+    "Moon.Validation/1.0.0-ci": {
+      "type": "project",
+      "path": "../Moon.Validation/project.json"
+    },
+    "Moon.Collections/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "m/DS27g8y1r5GE6A2ESKKY4zLStrirfn81sB78TLlwPdTONMxViiN9vVzJLHQEKfb8XzFZmt1kmdxpKT2pkekg==",
+      "sha512": "Qn2+DDaYPvJ+5VitNB1tmSaIcgjTLCn8++PHAqY8WWcqUt69IOW3IFjaRklTHMM7Lg6VXHiWbWU1DBAumtl18w==",
       "files": [
         "lib/dnx451/Moon.Collections.dll",
         "lib/dnx451/Moon.Collections.xml",
@@ -587,14 +664,15 @@
         "lib/dotnet/Moon.Collections.xml",
         "lib/net451/Moon.Collections.dll",
         "lib/net451/Moon.Collections.xml",
-        "Moon.Collections.1.1.5.nupkg",
-        "Moon.Collections.1.1.5.nupkg.sha512",
+        "Moon.Collections.1.1.7.nupkg",
+        "Moon.Collections.1.1.7.nupkg.sha512",
         "Moon.Collections.nuspec"
       ]
     },
-    "Moon.Contracts/1.1.5": {
+    "Moon.Contracts/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "CTz354WEnnQPrb3h61XJvlxuAyhzNQALWRCBvdIN5AZzqNSNfpEGRfoVvrQ8snRabmzhnoE2NIGd5t7s+fAljA==",
+      "sha512": "lS8PeuCtree6gYb7HYth06pR5U8cBjaGHFycuvl7ti61AtAeT8x2BcBqd+yFuu+qW0CJ9iG4j4bo9pbh/v+dyA==",
       "files": [
         "lib/dnx451/Moon.Contracts.dll",
         "lib/dnx451/Moon.Contracts.xml",
@@ -602,14 +680,15 @@
         "lib/dotnet/Moon.Contracts.xml",
         "lib/net451/Moon.Contracts.dll",
         "lib/net451/Moon.Contracts.xml",
-        "Moon.Contracts.1.1.5.nupkg",
-        "Moon.Contracts.1.1.5.nupkg.sha512",
+        "Moon.Contracts.1.1.7.nupkg",
+        "Moon.Contracts.1.1.7.nupkg.sha512",
         "Moon.Contracts.nuspec"
       ]
     },
-    "Moon.IO/1.1.5": {
+    "Moon.IO/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "sJwihimgBmQHCCgpUGT6i/AALv+1WKfwwTClMxb5WXvF204SpK4Ge/2UhTByaEmi+VxNAAEFABGaNfcMwJMGPg==",
+      "sha512": "iXe3X7iNf2QG1mVtpRsl0Ax/56o4FMflS77/GfDB/ltEP+R/5+1crOt0ngnT9b/ehQnWGui9pjsTWI1jeN9RRQ==",
       "files": [
         "lib/dnx451/Moon.IO.dll",
         "lib/dnx451/Moon.IO.xml",
@@ -617,14 +696,15 @@
         "lib/dotnet/Moon.IO.xml",
         "lib/net451/Moon.IO.dll",
         "lib/net451/Moon.IO.xml",
-        "Moon.IO.1.1.5.nupkg",
-        "Moon.IO.1.1.5.nupkg.sha512",
+        "Moon.IO.1.1.7.nupkg",
+        "Moon.IO.1.1.7.nupkg.sha512",
         "Moon.IO.nuspec"
       ]
     },
-    "Moon.IO.FileSystem/1.1.5": {
+    "Moon.IO.FileSystem/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "k1AYc6w8dfaxxUhSEEGSxPOyvucExdVMnABa3eEQom9hGgazarm7RJ5MoRjpeAdqMrRpb02vIUYBbchF+tUYrQ==",
+      "sha512": "goVx+97wXangbm8SHlLCTpcMZ55NHkvC4dMSdPiIoet4YJZe3d/HxwBc8/sVk1taih6eF0czFwKN6YhGJmljHg==",
       "files": [
         "lib/dnx451/Moon.IO.FileSystem.dll",
         "lib/dnx451/Moon.IO.FileSystem.xml",
@@ -632,14 +712,15 @@
         "lib/dotnet/Moon.IO.FileSystem.xml",
         "lib/net451/Moon.IO.FileSystem.dll",
         "lib/net451/Moon.IO.FileSystem.xml",
-        "Moon.IO.FileSystem.1.1.5.nupkg",
-        "Moon.IO.FileSystem.1.1.5.nupkg.sha512",
+        "Moon.IO.FileSystem.1.1.7.nupkg",
+        "Moon.IO.FileSystem.1.1.7.nupkg.sha512",
         "Moon.IO.FileSystem.nuspec"
       ]
     },
-    "Moon.Localization/1.4.2": {
+    "Moon.Localization/1.4.4": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "Nj1zL2PKlSTcPrASETFzftqftmHGHKr4XlkRmJ5LZy7XRUwpkYRZPU7oBnk3zIEUBQ0BG7qvJdElgAkdQIfh0A==",
+      "sha512": "DnciClEBdsAilgN0TtgjdtES0NBSq6uur5j8pUrnwnRqLyroog0tJsMBaz/cuky34zJoOKrlU/i/ijUV+6sVmg==",
       "files": [
         "lib/dnx451/Moon.Localization.dll",
         "lib/dnx451/Moon.Localization.xml",
@@ -647,14 +728,15 @@
         "lib/dotnet/Moon.Localization.xml",
         "lib/net451/Moon.Localization.dll",
         "lib/net451/Moon.Localization.xml",
-        "Moon.Localization.1.4.2.nupkg",
-        "Moon.Localization.1.4.2.nupkg.sha512",
+        "Moon.Localization.1.4.4.nupkg",
+        "Moon.Localization.1.4.4.nupkg.sha512",
         "Moon.Localization.nuspec"
       ]
     },
-    "Moon.Runtime/1.1.5": {
+    "Moon.Runtime/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "r8NmFTpWcyvXQppC4DAJW8xIBfhnGtxXKOuSbJUnUO67XlLoDKtQLyZUqTEVK72MaeHJdUt8kB1Qb3cBjiubXQ==",
+      "sha512": "8lsxUPxFVldn50eDP2QTLLV3RLV16Jc6fbksW1vvxtVHUn6016TQxkyTqI6ZP2fZ1W2aZdd0SMUB8y3lIzdHnA==",
       "files": [
         "lib/dnx451/Moon.Runtime.dll",
         "lib/dnx451/Moon.Runtime.xml",
@@ -662,14 +744,15 @@
         "lib/dotnet/Moon.Runtime.xml",
         "lib/net451/Moon.Runtime.dll",
         "lib/net451/Moon.Runtime.xml",
-        "Moon.Runtime.1.1.5.nupkg",
-        "Moon.Runtime.1.1.5.nupkg.sha512",
+        "Moon.Runtime.1.1.7.nupkg",
+        "Moon.Runtime.1.1.7.nupkg.sha512",
         "Moon.Runtime.nuspec"
       ]
     },
-    "Moon.Threading/1.1.5": {
+    "Moon.Threading/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "KVmjSPe9TLSNbbvtjS3m7IA5tofUdVTPQQqw4gZt00bc/iyHqhpXY6VGSxUazdSjoAtWz/rwPUD1FxEsB8brLg==",
+      "sha512": "/lJbB/hvxqpSfePC8mYt7F4dJQ6Dz45REupZS2q2Hsk8BuXMZKxfc59Bx+bt+5gkRW0Hu8BfCl7mq0kn/fcZQA==",
       "files": [
         "lib/dnx451/Moon.Threading.dll",
         "lib/dnx451/Moon.Threading.xml",
@@ -677,14 +760,15 @@
         "lib/dotnet/Moon.Threading.xml",
         "lib/net451/Moon.Threading.dll",
         "lib/net451/Moon.Threading.xml",
-        "Moon.Threading.1.1.5.nupkg",
-        "Moon.Threading.1.1.5.nupkg.sha512",
+        "Moon.Threading.1.1.7.nupkg",
+        "Moon.Threading.1.1.7.nupkg.sha512",
         "Moon.Threading.nuspec"
       ]
     },
-    "System.Collections/4.0.10": {
+    "System.Collections/4.0.11-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "ux6ilcZZjV/Gp7JEZpe+2V1eTueq6NuoGRM3eZCFuPM25hLVVgCRuea6STW8hvqreIOE59irJk5/ovpA5xQipw==",
+      "sha512": "a0TAXwml5Up4s0Wn/l6OTaLgyj+AtqWjDCCnuJAE/UXwe0VY7oXLaPmBb08NQ2Q2PnJTnElTZeXB0i9faMsezQ==",
       "files": [
         "lib/DNXCore50/System.Collections.dll",
         "lib/MonoAndroid10/_._",
@@ -693,31 +777,22 @@
         "lib/netcore50/System.Collections.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.Collections.xml",
-        "ref/dotnet/es/System.Collections.xml",
-        "ref/dotnet/fr/System.Collections.xml",
-        "ref/dotnet/it/System.Collections.xml",
-        "ref/dotnet/ja/System.Collections.xml",
-        "ref/dotnet/ko/System.Collections.xml",
-        "ref/dotnet/ru/System.Collections.xml",
         "ref/dotnet/System.Collections.dll",
-        "ref/dotnet/System.Collections.xml",
-        "ref/dotnet/zh-hans/System.Collections.xml",
-        "ref/dotnet/zh-hant/System.Collections.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Collections.dll",
-        "System.Collections.4.0.10.nupkg",
-        "System.Collections.4.0.10.nupkg.sha512",
+        "System.Collections.4.0.11-beta-23225.nupkg",
+        "System.Collections.4.0.11-beta-23225.nupkg.sha512",
         "System.Collections.nuspec"
       ]
     },
-    "System.Collections.Concurrent/4.0.10": {
+    "System.Collections.Concurrent/4.0.11-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "ZtMEqOPAjAIqR8fqom9AOKRaB94a+emO2O8uOP6vyJoNswSPrbiwN7iH53rrVpvjMVx0wr4/OMpI7486uGZjbw==",
+      "sha512": "R2TwS/ke/9sQlkG9mNZiepk2IX1/pPjEWeba2oSBRH6BkdUkOc3GVzw1ngPJOsjKP/eL+Pe3WoboeR0ZPB8PJA==",
       "files": [
         "lib/dotnet/System.Collections.Concurrent.dll",
         "lib/MonoAndroid10/_._",
@@ -725,28 +800,19 @@
         "lib/net46/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.Collections.Concurrent.xml",
-        "ref/dotnet/es/System.Collections.Concurrent.xml",
-        "ref/dotnet/fr/System.Collections.Concurrent.xml",
-        "ref/dotnet/it/System.Collections.Concurrent.xml",
-        "ref/dotnet/ja/System.Collections.Concurrent.xml",
-        "ref/dotnet/ko/System.Collections.Concurrent.xml",
-        "ref/dotnet/ru/System.Collections.Concurrent.xml",
         "ref/dotnet/System.Collections.Concurrent.dll",
-        "ref/dotnet/System.Collections.Concurrent.xml",
-        "ref/dotnet/zh-hans/System.Collections.Concurrent.xml",
-        "ref/dotnet/zh-hant/System.Collections.Concurrent.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.Collections.Concurrent.4.0.10.nupkg",
-        "System.Collections.Concurrent.4.0.10.nupkg.sha512",
+        "System.Collections.Concurrent.4.0.11-beta-23225.nupkg",
+        "System.Collections.Concurrent.4.0.11-beta-23225.nupkg.sha512",
         "System.Collections.Concurrent.nuspec"
       ]
     },
     "System.ComponentModel/4.0.0": {
+      "type": "package",
       "serviceable": true,
       "sha512": "BzpLdSi++ld7rJLOOt5f/G9GxujP202bBgKORsHcGV36rLB0mfSA2h8chTMoBzFhgN7TE14TmJ2J7Q1RyNCTAw==",
       "files": [
@@ -778,9 +844,10 @@
         "System.ComponentModel.nuspec"
       ]
     },
-    "System.ComponentModel.Annotations/4.0.10": {
+    "System.ComponentModel.Annotations/4.0.11-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "7+XGyEZx24nP1kpHxCB9e+c6D0fdVDvFwE1xujE9BzlXyNVcy5J5aIO0H/ECupx21QpyRvzZibGAHfL/XLL6dw==",
+      "sha512": "7joW+7RsBRAIeIlHeZc0SOVJ7GMHeh1xi8fnhpz9vUoIS31hV4qZ1w5l395eOw+LWE/cjooqqH7rQC83U36B6A==",
       "files": [
         "lib/dotnet/System.ComponentModel.Annotations.dll",
         "lib/MonoAndroid10/_._",
@@ -788,28 +855,19 @@
         "lib/net46/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.ComponentModel.Annotations.xml",
-        "ref/dotnet/es/System.ComponentModel.Annotations.xml",
-        "ref/dotnet/fr/System.ComponentModel.Annotations.xml",
-        "ref/dotnet/it/System.ComponentModel.Annotations.xml",
-        "ref/dotnet/ja/System.ComponentModel.Annotations.xml",
-        "ref/dotnet/ko/System.ComponentModel.Annotations.xml",
-        "ref/dotnet/ru/System.ComponentModel.Annotations.xml",
         "ref/dotnet/System.ComponentModel.Annotations.dll",
-        "ref/dotnet/System.ComponentModel.Annotations.xml",
-        "ref/dotnet/zh-hans/System.ComponentModel.Annotations.xml",
-        "ref/dotnet/zh-hant/System.ComponentModel.Annotations.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.ComponentModel.Annotations.4.0.10.nupkg",
-        "System.ComponentModel.Annotations.4.0.10.nupkg.sha512",
+        "System.ComponentModel.Annotations.4.0.11-beta-23225.nupkg",
+        "System.ComponentModel.Annotations.4.0.11-beta-23225.nupkg.sha512",
         "System.ComponentModel.Annotations.nuspec"
       ]
     },
     "System.Diagnostics.Debug/4.0.10": {
+      "type": "package",
       "serviceable": true,
       "sha512": "pi2KthuvI2LWV2c2V+fwReDsDiKpNl040h6DcwFOb59SafsPT/V1fCy0z66OKwysurJkBMmp5j5CBe3Um+ub0g==",
       "files": [
@@ -842,9 +900,10 @@
         "System.Diagnostics.Debug.nuspec"
       ]
     },
-    "System.Diagnostics.Tools/4.0.0": {
+    "System.Diagnostics.Tools/4.0.1-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "uw5Qi2u5Cgtv4xv3+8DeB63iaprPcaEHfpeJqlJiLjIVy6v0La4ahJ6VW9oPbJNIjcavd24LKq0ctT9ssuQXsw==",
+      "sha512": "SMLM08CszBMNYYM5gTonJwXl1hVDyn5yyyKYzmUutGTvtdQzcgybBgsnl3U3ePgZ9TdxEkLHJqQWdP1tLjY/1w==",
       "files": [
         "lib/DNXCore50/System.Diagnostics.Tools.dll",
         "lib/net45/_._",
@@ -852,30 +911,20 @@
         "lib/win8/_._",
         "lib/wp80/_._",
         "lib/wpa81/_._",
-        "ref/dotnet/de/System.Diagnostics.Tools.xml",
-        "ref/dotnet/es/System.Diagnostics.Tools.xml",
-        "ref/dotnet/fr/System.Diagnostics.Tools.xml",
-        "ref/dotnet/it/System.Diagnostics.Tools.xml",
-        "ref/dotnet/ja/System.Diagnostics.Tools.xml",
-        "ref/dotnet/ko/System.Diagnostics.Tools.xml",
-        "ref/dotnet/ru/System.Diagnostics.Tools.xml",
         "ref/dotnet/System.Diagnostics.Tools.dll",
-        "ref/dotnet/System.Diagnostics.Tools.xml",
-        "ref/dotnet/zh-hans/System.Diagnostics.Tools.xml",
-        "ref/dotnet/zh-hant/System.Diagnostics.Tools.xml",
         "ref/net45/_._",
         "ref/netcore50/System.Diagnostics.Tools.dll",
-        "ref/netcore50/System.Diagnostics.Tools.xml",
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
         "runtimes/win8-aot/lib/netcore50/System.Diagnostics.Tools.dll",
-        "System.Diagnostics.Tools.4.0.0.nupkg",
-        "System.Diagnostics.Tools.4.0.0.nupkg.sha512",
+        "System.Diagnostics.Tools.4.0.1-beta-23225.nupkg",
+        "System.Diagnostics.Tools.4.0.1-beta-23225.nupkg.sha512",
         "System.Diagnostics.Tools.nuspec"
       ]
     },
     "System.Diagnostics.Tracing/4.0.20": {
+      "type": "package",
       "serviceable": true,
       "sha512": "gn/wexGHc35Fv++5L1gYHMY5g25COfiZ0PGrL+3PfwzoJd4X2LbTAm/U8d385SI6BKQBI/z4dQfvneS9J27+Tw==",
       "files": [
@@ -908,8 +957,10 @@
         "System.Diagnostics.Tracing.nuspec"
       ]
     },
-    "System.Globalization/4.0.10": {
-      "sha512": "kzRtbbCNAxdafFBDogcM36ehA3th8c1PGiz8QRkZn8O5yMBorDHSK8/TGJPYOaCS5zdsGk0u9qXHnW91nqy7fw==",
+    "System.Globalization/4.0.11-beta-23225": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "yXW8KIhMr2r1IB9yZEJLcjRCkIdu9DO9Qzy7+XSPXON49qI0pbFU10a2TbQJxVj4jNo7R2qqvg2N4FwZqaNSgg==",
       "files": [
         "lib/DNXCore50/System.Globalization.dll",
         "lib/MonoAndroid10/_._",
@@ -918,29 +969,20 @@
         "lib/netcore50/System.Globalization.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.Globalization.xml",
-        "ref/dotnet/es/System.Globalization.xml",
-        "ref/dotnet/fr/System.Globalization.xml",
-        "ref/dotnet/it/System.Globalization.xml",
-        "ref/dotnet/ja/System.Globalization.xml",
-        "ref/dotnet/ko/System.Globalization.xml",
-        "ref/dotnet/ru/System.Globalization.xml",
         "ref/dotnet/System.Globalization.dll",
-        "ref/dotnet/System.Globalization.xml",
-        "ref/dotnet/zh-hans/System.Globalization.xml",
-        "ref/dotnet/zh-hant/System.Globalization.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Globalization.dll",
-        "System.Globalization.4.0.10.nupkg",
-        "System.Globalization.4.0.10.nupkg.sha512",
+        "System.Globalization.4.0.11-beta-23225.nupkg",
+        "System.Globalization.4.0.11-beta-23225.nupkg.sha512",
         "System.Globalization.nuspec"
       ]
     },
     "System.IO/4.0.0": {
+      "type": "package",
       "sha512": "MoCHQ0u5n0OMwUS8OX4Gl48qKiQziSW5cXvt82d+MmAcsLq9OL90+ihnu/aJ1h6OOYcBswrZAEuApfZha9w2lg==",
       "files": [
         "lib/MonoAndroid10/_._",
@@ -987,9 +1029,10 @@
         "System.IO.nuspec"
       ]
     },
-    "System.IO.FileSystem/4.0.0": {
+    "System.IO.FileSystem/4.0.1-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "eo05SPWfG+54UA0wxgRIYOuOslq+2QrJLXZaJDDsfLXG15OLguaItW39NYZTqUb4DeGOkU4R0wpOLOW4ynMUDQ==",
+      "sha512": "R1t2THiMBUI3Sa5lXJiGzjO4fLXIyQZGp/MUGR4gnt6nar05/nk8ilZplzakk4YXN3V5h+F8LeeiQNZ+4Yw/Bw==",
       "files": [
         "lib/DNXCore50/System.IO.FileSystem.dll",
         "lib/MonoAndroid10/_._",
@@ -998,28 +1041,19 @@
         "lib/netcore50/System.IO.FileSystem.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.IO.FileSystem.xml",
-        "ref/dotnet/es/System.IO.FileSystem.xml",
-        "ref/dotnet/fr/System.IO.FileSystem.xml",
-        "ref/dotnet/it/System.IO.FileSystem.xml",
-        "ref/dotnet/ja/System.IO.FileSystem.xml",
-        "ref/dotnet/ko/System.IO.FileSystem.xml",
-        "ref/dotnet/ru/System.IO.FileSystem.xml",
         "ref/dotnet/System.IO.FileSystem.dll",
-        "ref/dotnet/System.IO.FileSystem.xml",
-        "ref/dotnet/zh-hans/System.IO.FileSystem.xml",
-        "ref/dotnet/zh-hant/System.IO.FileSystem.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/System.IO.FileSystem.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
-        "System.IO.FileSystem.4.0.0.nupkg",
-        "System.IO.FileSystem.4.0.0.nupkg.sha512",
+        "System.IO.FileSystem.4.0.1-beta-23225.nupkg",
+        "System.IO.FileSystem.4.0.1-beta-23225.nupkg.sha512",
         "System.IO.FileSystem.nuspec"
       ]
     },
     "System.IO.FileSystem.Primitives/4.0.0": {
+      "type": "package",
       "serviceable": true,
       "sha512": "7pJUvYi/Yq3A5nagqCCiOw3+aJp3xXc/Cjr8dnJDnER3/6kX3LEencfqmXUcPl9+7OvRNyPMNhqsLAcMK6K/KA==",
       "files": [
@@ -1050,9 +1084,10 @@
         "System.IO.FileSystem.Primitives.nuspec"
       ]
     },
-    "System.Linq/4.0.0": {
+    "System.Linq/4.0.1-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "r6Hlc+ytE6m/9UBr+nNRRdoJEWjoeQiT3L3lXYFDHoXk3VYsRBCDNXrawcexw7KPLaH0zamQLiAb6avhZ50cGg==",
+      "sha512": "7wKcd3jtQrVSKshlyOJ3X43AU5rwArScYMYgtbyZmzBViJogfFiJfnSzBfzm5XsmJaUOfbCoVj+jdrMOJtdpgQ==",
       "files": [
         "lib/dotnet/System.Linq.dll",
         "lib/net45/_._",
@@ -1060,31 +1095,21 @@
         "lib/win8/_._",
         "lib/wp80/_._",
         "lib/wpa81/_._",
-        "ref/dotnet/de/System.Linq.xml",
-        "ref/dotnet/es/System.Linq.xml",
-        "ref/dotnet/fr/System.Linq.xml",
-        "ref/dotnet/it/System.Linq.xml",
-        "ref/dotnet/ja/System.Linq.xml",
-        "ref/dotnet/ko/System.Linq.xml",
-        "ref/dotnet/ru/System.Linq.xml",
         "ref/dotnet/System.Linq.dll",
-        "ref/dotnet/System.Linq.xml",
-        "ref/dotnet/zh-hans/System.Linq.xml",
-        "ref/dotnet/zh-hant/System.Linq.xml",
         "ref/net45/_._",
         "ref/netcore50/System.Linq.dll",
-        "ref/netcore50/System.Linq.xml",
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
-        "System.Linq.4.0.0.nupkg",
-        "System.Linq.4.0.0.nupkg.sha512",
+        "System.Linq.4.0.1-beta-23225.nupkg",
+        "System.Linq.4.0.1-beta-23225.nupkg.sha512",
         "System.Linq.nuspec"
       ]
     },
-    "System.Linq.Expressions/4.0.10": {
+    "System.Linq.Expressions/4.0.11-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "qhFkPqRsTfXBaacjQhxwwwUoU7TEtwlBIULj7nG7i4qAkvivil31VvOvDKppCSui5yGw0/325ZeNaMYRvTotXw==",
+      "sha512": "e33FTxQVGdIG9rLOB813sp6987n+3kYmT0F1KqXnQEiDt36S90i/VBpRbLX+uUU5Kb4NiT9Zjvsml1TLuBhNEA==",
       "files": [
         "lib/DNXCore50/System.Linq.Expressions.dll",
         "lib/MonoAndroid10/_._",
@@ -1093,17 +1118,7 @@
         "lib/netcore50/System.Linq.Expressions.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.Linq.Expressions.xml",
-        "ref/dotnet/es/System.Linq.Expressions.xml",
-        "ref/dotnet/fr/System.Linq.Expressions.xml",
-        "ref/dotnet/it/System.Linq.Expressions.xml",
-        "ref/dotnet/ja/System.Linq.Expressions.xml",
-        "ref/dotnet/ko/System.Linq.Expressions.xml",
-        "ref/dotnet/ru/System.Linq.Expressions.xml",
         "ref/dotnet/System.Linq.Expressions.dll",
-        "ref/dotnet/System.Linq.Expressions.xml",
-        "ref/dotnet/zh-hans/System.Linq.Expressions.xml",
-        "ref/dotnet/zh-hant/System.Linq.Expressions.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/_._",
@@ -1111,13 +1126,15 @@
         "ref/xamarinmac20/_._",
         "runtime.json",
         "runtimes/win8-aot/lib/netcore50/System.Linq.Expressions.dll",
-        "System.Linq.Expressions.4.0.10.nupkg",
-        "System.Linq.Expressions.4.0.10.nupkg.sha512",
+        "System.Linq.Expressions.4.0.11-beta-23225.nupkg",
+        "System.Linq.Expressions.4.0.11-beta-23225.nupkg.sha512",
         "System.Linq.Expressions.nuspec"
       ]
     },
-    "System.Reflection/4.0.10": {
-      "sha512": "WZ+4lEE4gqGx6mrqLhSiW4oi6QLPWwdNjzhhTONmhELOrW8Cw9phlO9tltgvRUuQUqYtBiliFwhO5S5fCJElVw==",
+    "System.Reflection/4.1.0-beta-23225": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "nlguo6AocBKGccv4CFSMCOR2/vU+93u/yvzFKO6ViNJ/SBz2VEZ1nOeW93vqKKpOMJkt3YtTvMWmS+kUGz/1bA==",
       "files": [
         "lib/DNXCore50/System.Reflection.dll",
         "lib/MonoAndroid10/_._",
@@ -1126,29 +1143,20 @@
         "lib/netcore50/System.Reflection.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.Reflection.xml",
-        "ref/dotnet/es/System.Reflection.xml",
-        "ref/dotnet/fr/System.Reflection.xml",
-        "ref/dotnet/it/System.Reflection.xml",
-        "ref/dotnet/ja/System.Reflection.xml",
-        "ref/dotnet/ko/System.Reflection.xml",
-        "ref/dotnet/ru/System.Reflection.xml",
         "ref/dotnet/System.Reflection.dll",
-        "ref/dotnet/System.Reflection.xml",
-        "ref/dotnet/zh-hans/System.Reflection.xml",
-        "ref/dotnet/zh-hant/System.Reflection.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Reflection.dll",
-        "System.Reflection.4.0.10.nupkg",
-        "System.Reflection.4.0.10.nupkg.sha512",
+        "System.Reflection.4.1.0-beta-23225.nupkg",
+        "System.Reflection.4.1.0-beta-23225.nupkg.sha512",
         "System.Reflection.nuspec"
       ]
     },
     "System.Reflection.Extensions/4.0.0": {
+      "type": "package",
       "serviceable": true,
       "sha512": "dbYaZWCyFAu1TGYUqR2n+Q+1casSHPR2vVW0WVNkXpZbrd2BXcZ7cpvpu9C98CTHtNmyfMWCLpCclDqly23t6A==",
       "files": [
@@ -1182,6 +1190,7 @@
       ]
     },
     "System.Reflection.Primitives/4.0.0": {
+      "type": "package",
       "serviceable": true,
       "sha512": "n9S0XpKv2ruc17FSnaiX6nV47VfHTZ1wLjKZlAirUZCvDQCH71mVp+Ohabn0xXLh5pK2PKp45HCxkqu5Fxn/lA==",
       "files": [
@@ -1215,6 +1224,7 @@
       ]
     },
     "System.Resources.ResourceManager/4.0.0": {
+      "type": "package",
       "serviceable": true,
       "sha512": "qmqeZ4BJgjfU+G2JbrZt4Dk1LsMxO4t+f/9HarNY6w8pBgweO6jT+cknUH7c3qIrGvyUqraBhU45Eo6UtA0fAw==",
       "files": [
@@ -1248,6 +1258,7 @@
       ]
     },
     "System.Runtime/4.0.20": {
+      "type": "package",
       "serviceable": true,
       "sha512": "X7N/9Bz7jVPorqdVFO86ns1sX6MlQM+WTxELtx+Z4VG45x9+LKmWH0GRqjgKprUnVuwmfB9EJ9DQng14Z7/zwg==",
       "files": [
@@ -1280,9 +1291,10 @@
         "System.Runtime.nuspec"
       ]
     },
-    "System.Runtime.Extensions/4.0.10": {
+    "System.Runtime.Extensions/4.0.11-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "5dsEwf3Iml7d5OZeT20iyOjT+r+okWpN7xI2v+R4cgd3WSj4DeRPTvPFjDpacbVW4skCAZ8B9hxXJYgkCFKJ1A==",
+      "sha512": "crElsF4wljPNYuK8RgwEwxW0++MGp0AWpwz+aeMoAmcvqD7pNyf760u+kK+DFjbhkPLRf3lB8mVfgIOxLrZzyg==",
       "files": [
         "lib/DNXCore50/System.Runtime.Extensions.dll",
         "lib/MonoAndroid10/_._",
@@ -1291,29 +1303,20 @@
         "lib/netcore50/System.Runtime.Extensions.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.Runtime.Extensions.xml",
-        "ref/dotnet/es/System.Runtime.Extensions.xml",
-        "ref/dotnet/fr/System.Runtime.Extensions.xml",
-        "ref/dotnet/it/System.Runtime.Extensions.xml",
-        "ref/dotnet/ja/System.Runtime.Extensions.xml",
-        "ref/dotnet/ko/System.Runtime.Extensions.xml",
-        "ref/dotnet/ru/System.Runtime.Extensions.xml",
         "ref/dotnet/System.Runtime.Extensions.dll",
-        "ref/dotnet/System.Runtime.Extensions.xml",
-        "ref/dotnet/zh-hans/System.Runtime.Extensions.xml",
-        "ref/dotnet/zh-hant/System.Runtime.Extensions.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Runtime.Extensions.dll",
-        "System.Runtime.Extensions.4.0.10.nupkg",
-        "System.Runtime.Extensions.4.0.10.nupkg.sha512",
+        "System.Runtime.Extensions.4.0.11-beta-23225.nupkg",
+        "System.Runtime.Extensions.4.0.11-beta-23225.nupkg.sha512",
         "System.Runtime.Extensions.nuspec"
       ]
     },
     "System.Runtime.Handles/4.0.0": {
+      "type": "package",
       "serviceable": true,
       "sha512": "638VhpRq63tVcQ6HDb3um3R/J2BtR1Sa96toHo6PcJGPXEPEsleCuqhBgX2gFCz0y0qkutANwW6VPPY5wQu1XQ==",
       "files": [
@@ -1347,6 +1350,7 @@
       ]
     },
     "System.Text.Encoding/4.0.0": {
+      "type": "package",
       "sha512": "AMxFNOXpA6Ab8swULbXuJmoT2K5w6TnV3ObF5wsmEcIHQUJghoZtDVfVHb08O2wW15mOSI1i9Wg0Dx0pY13o8g==",
       "files": [
         "lib/MonoAndroid10/_._",
@@ -1394,6 +1398,7 @@
       ]
     },
     "System.Text.RegularExpressions/4.0.10": {
+      "type": "package",
       "serviceable": true,
       "sha512": "0vDuHXJePpfMCecWBNOabOKCvzfTbFMNcGgklt3l5+RqHV5SzmF7RUVpuet8V0rJX30ROlL66xdehw2Rdsn2DA==",
       "files": [
@@ -1425,6 +1430,7 @@
       ]
     },
     "System.Threading/4.0.10": {
+      "type": "package",
       "serviceable": true,
       "sha512": "0w6pRxIEE7wuiOJeKabkDgeIKmqf4ER1VNrs6qFwHnooEE78yHwi/bKkg5Jo8/pzGLm0xQJw0nEmPXt1QBAIUA==",
       "files": [
@@ -1457,9 +1463,10 @@
         "System.Threading.nuspec"
       ]
     },
-    "System.Threading.Tasks/4.0.10": {
+    "System.Threading.Tasks/4.0.11-beta-23225": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "NOwJGDfk79jR0bnzosbXLVD/PdI8KzBeESoa3CofEM5v9R5EBfcI0Jyf18stx+0IYV9okmDIDxVtxq9TbnR9bQ==",
+      "sha512": "HXGeC5GxXwli7aalRQV/XIEVhPGtvLsH9iH1Pq87kfspAm5Gr5n9US0mMjJdksy4xr7cd6irAFGt10VD2V2e8g==",
       "files": [
         "lib/DNXCore50/System.Threading.Tasks.dll",
         "lib/MonoAndroid10/_._",
@@ -1468,32 +1475,22 @@
         "lib/netcore50/System.Threading.Tasks.dll",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
-        "ref/dotnet/de/System.Threading.Tasks.xml",
-        "ref/dotnet/es/System.Threading.Tasks.xml",
-        "ref/dotnet/fr/System.Threading.Tasks.xml",
-        "ref/dotnet/it/System.Threading.Tasks.xml",
-        "ref/dotnet/ja/System.Threading.Tasks.xml",
-        "ref/dotnet/ko/System.Threading.Tasks.xml",
-        "ref/dotnet/ru/System.Threading.Tasks.xml",
         "ref/dotnet/System.Threading.Tasks.dll",
-        "ref/dotnet/System.Threading.Tasks.xml",
-        "ref/dotnet/zh-hans/System.Threading.Tasks.xml",
-        "ref/dotnet/zh-hant/System.Threading.Tasks.xml",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/net46/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "runtimes/win8-aot/lib/netcore50/System.Threading.Tasks.dll",
-        "System.Threading.Tasks.4.0.10.nupkg",
-        "System.Threading.Tasks.4.0.10.nupkg.sha512",
+        "System.Threading.Tasks.4.0.11-beta-23225.nupkg",
+        "System.Threading.Tasks.4.0.11-beta-23225.nupkg.sha512",
         "System.Threading.Tasks.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "Moon.Localization >= 1.4.2",
+      "Moon.Localization >= 1.4.4",
       "Moon.Validation >= 1.0.0-ci"
     ],
     ".NETFramework,Version=v4.5.1": [],

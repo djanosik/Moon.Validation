@@ -3,9 +3,10 @@
   "version": 1,
   "targets": {
     ".NETFramework,Version=v4.5.1": {
-      "Moon.Collections/1.1.5": {
+      "Moon.Collections/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Runtime": "1.1.5"
+          "Moon.Runtime": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -20,7 +21,8 @@
           "lib/net451/Moon.Collections.dll": {}
         }
       },
-      "Moon.Contracts/1.1.5": {
+      "Moon.Contracts/1.1.7": {
+        "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
           "mscorlib",
@@ -34,9 +36,10 @@
           "lib/net451/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Runtime/1.1.5": {
+      "Moon.Runtime/1.1.7": {
+        "type": "package",
         "dependencies": {
-          "Moon.Contracts": "1.1.5"
+          "Moon.Contracts": "1.1.7"
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
@@ -50,13 +53,27 @@
         "runtime": {
           "lib/net451/Moon.Runtime.dll": {}
         }
+      },
+      "Moon.Validation/1.0.0-ci": {
+        "type": "project",
+        "dependencies": {
+          "Moon.Collections": "1.1.7"
+        },
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ]
       }
     }
   },
   "libraries": {
-    "Moon.Collections/1.1.5": {
+    "Moon.Validation/1.0.0-ci": {
+      "type": "project",
+      "path": "../Moon.Validation/project.json"
+    },
+    "Moon.Collections/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "m/DS27g8y1r5GE6A2ESKKY4zLStrirfn81sB78TLlwPdTONMxViiN9vVzJLHQEKfb8XzFZmt1kmdxpKT2pkekg==",
+      "sha512": "Qn2+DDaYPvJ+5VitNB1tmSaIcgjTLCn8++PHAqY8WWcqUt69IOW3IFjaRklTHMM7Lg6VXHiWbWU1DBAumtl18w==",
       "files": [
         "lib/dnx451/Moon.Collections.dll",
         "lib/dnx451/Moon.Collections.xml",
@@ -64,14 +81,15 @@
         "lib/dotnet/Moon.Collections.xml",
         "lib/net451/Moon.Collections.dll",
         "lib/net451/Moon.Collections.xml",
-        "Moon.Collections.1.1.5.nupkg",
-        "Moon.Collections.1.1.5.nupkg.sha512",
+        "Moon.Collections.1.1.7.nupkg",
+        "Moon.Collections.1.1.7.nupkg.sha512",
         "Moon.Collections.nuspec"
       ]
     },
-    "Moon.Contracts/1.1.5": {
+    "Moon.Contracts/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "CTz354WEnnQPrb3h61XJvlxuAyhzNQALWRCBvdIN5AZzqNSNfpEGRfoVvrQ8snRabmzhnoE2NIGd5t7s+fAljA==",
+      "sha512": "lS8PeuCtree6gYb7HYth06pR5U8cBjaGHFycuvl7ti61AtAeT8x2BcBqd+yFuu+qW0CJ9iG4j4bo9pbh/v+dyA==",
       "files": [
         "lib/dnx451/Moon.Contracts.dll",
         "lib/dnx451/Moon.Contracts.xml",
@@ -79,14 +97,15 @@
         "lib/dotnet/Moon.Contracts.xml",
         "lib/net451/Moon.Contracts.dll",
         "lib/net451/Moon.Contracts.xml",
-        "Moon.Contracts.1.1.5.nupkg",
-        "Moon.Contracts.1.1.5.nupkg.sha512",
+        "Moon.Contracts.1.1.7.nupkg",
+        "Moon.Contracts.1.1.7.nupkg.sha512",
         "Moon.Contracts.nuspec"
       ]
     },
-    "Moon.Runtime/1.1.5": {
+    "Moon.Runtime/1.1.7": {
+      "type": "package",
       "serviceable": true,
-      "sha512": "r8NmFTpWcyvXQppC4DAJW8xIBfhnGtxXKOuSbJUnUO67XlLoDKtQLyZUqTEVK72MaeHJdUt8kB1Qb3cBjiubXQ==",
+      "sha512": "8lsxUPxFVldn50eDP2QTLLV3RLV16Jc6fbksW1vvxtVHUn6016TQxkyTqI6ZP2fZ1W2aZdd0SMUB8y3lIzdHnA==",
       "files": [
         "lib/dnx451/Moon.Runtime.dll",
         "lib/dnx451/Moon.Runtime.xml",
@@ -94,8 +113,8 @@
         "lib/dotnet/Moon.Runtime.xml",
         "lib/net451/Moon.Runtime.dll",
         "lib/net451/Moon.Runtime.xml",
-        "Moon.Runtime.1.1.5.nupkg",
-        "Moon.Runtime.1.1.5.nupkg.sha512",
+        "Moon.Runtime.1.1.7.nupkg",
+        "Moon.Runtime.1.1.7.nupkg.sha512",
         "Moon.Runtime.nuspec"
       ]
     }

@@ -16,7 +16,7 @@
       "Min": "The field {0} must be greater than or equal to {1}.",
       "MinLength": "The {0} field must be at least {1} characters long.",
       "NotEqual": "The field {0} must not be equal to the field {1}.",
-      "Numeric": "The {0} field is not a valid number.",
+      "Double": "The {0} field is not a valid number.",
       "Required": "The {0} field is required.",
       "Url": "The {0} field is not a valid fully-qualified http, https, or ftp URL.",
       "UrlDisallowProtocol": "The {0} field is not a valid protocol-less URL.",
