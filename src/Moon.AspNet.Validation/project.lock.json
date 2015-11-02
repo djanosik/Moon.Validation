@@ -14681,6 +14681,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Microsoft.AspNet.Mvc.DataAnnotations >= 6.0.0-beta8",
       "Moon.AspNet.Mvc >= 1.2.9",
       "Moon.Validation >= 1.0.0-ci"
     ],

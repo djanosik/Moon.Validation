@@ -1304,6 +1304,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-beta8",
           "Moon.AspNet.Mvc": "1.2.9",
           "Moon.Validation": "1.0.0-ci"
         }
@@ -2772,6 +2773,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-beta8",
           "Moon.AspNet.Mvc": "1.2.9",
           "Moon.Validation": "1.0.0-ci"
         }
@@ -5075,6 +5077,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-beta8",
           "Moon.AspNet.Mvc": "1.2.9",
           "Moon.Validation": "1.0.0-ci"
         }
@@ -6667,6 +6670,7 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-beta8",
           "Moon.AspNet.Mvc": "1.2.9",
           "Moon.Validation": "1.0.0-ci"
         }
@@ -8144,6 +8148,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-beta8",
           "Moon.AspNet.Mvc": "1.2.9",
           "Moon.Validation": "1.0.0-ci"
         }
@@ -10751,6 +10756,7 @@
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-beta8",
           "Moon.AspNet.Mvc": "1.2.9",
           "Moon.Validation": "1.0.0-ci"
         }
