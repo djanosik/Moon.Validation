@@ -8,7 +8,7 @@
   "tags": [ "moontea", "asp.net", "validation", "annotations" ],
 
   "dependencies": {
-    "Moon.AspNet.Mvc": "1.2.2",
+    "Moon.AspNet.Mvc": "1.2.9",
     "Moon.Validation": "1.0.0-ci"
   },
 

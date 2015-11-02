@@ -11,6 +11,8 @@ namespace Moon.AspNet.Validation.Sample
     {
         public void Configure(IApplicationBuilder app)
         {
+            app.UseIISPlatformHandler();
+
             app.UseLocalization(r =>
                 r.LoadJson("resources"));
 

@@ -16,7 +16,7 @@ namespace Moon.AspNet.Validation
         /// </summary>
         /// <param name="attribute">The validation attribute.</param>
         protected AttributeAdapter(TAttribute attribute)
-            : base(attribute)
+            : base(attribute, null)
         {
         }
 

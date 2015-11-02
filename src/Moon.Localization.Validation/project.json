@@ -8,7 +8,7 @@
   "tags": [ "moontea", "validation", "annotations", "localization" ],
 
   "dependencies": {
-    "Moon.Localization": "1.4.4",
+    "Moon.Localization": "1.4.5",
     "Moon.Validation": "1.0.0-ci"
   },
 
