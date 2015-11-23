@@ -8,13 +8,12 @@
   "tags": [ "moontea", "validation", "annotations", "localization" ],
 
   "dependencies": {
-    "Moon.Localization": "1.4.5",
+    "Moon.Localization": "1.4.6",
     "Moon.Validation": "1.0.0-ci"
   },
 
   "frameworks": {
     "net451": { },
-    "dnx451": { },
-    "dotnet": { }
+    "dotnet5.4": { }
   }
 }

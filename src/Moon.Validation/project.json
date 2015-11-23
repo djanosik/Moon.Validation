@@ -8,7 +8,7 @@
   "tags": [ "moontea", "validation", "annotations" ],
 
   "dependencies": {
-    "Moon.Collections": "1.2.3"
+    "Moon.Collections": "1.2.4"
   },
 
   "frameworks": {
@@ -17,15 +17,10 @@
         "System.ComponentModel.DataAnnotations": "4.0.0.0"
       }
     },
-    "dnx451": {
-      "frameworkAssemblies": {
-        "System.ComponentModel.DataAnnotations": "4.0.0.0"
-      }
-    },
-    "dotnet": {
+    "dotnet5.4": {
       "dependencies": {
-        "System.ComponentModel.Annotations": "4.0.11-beta-23409",
-        "System.Linq.Expressions": "4.0.11-beta-23409"
+        "System.ComponentModel.Annotations": "4.0.11-*",
+        "System.Linq.Expressions": "4.0.11-*"
       }
     }
   }

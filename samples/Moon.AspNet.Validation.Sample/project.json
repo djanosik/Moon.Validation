@@ -3,11 +3,11 @@
   "webroot": "wwwroot",
 
   "dependencies": {
-    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
-    "Moon.AspNet.Localization": "1.4.5",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-*",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-*",
+    "Moon.AspNet.Localization": "1.4.6",
     "Moon.AspNet.Validation": "1.0.0-ci",
-    "Moon.Localization.Json": "1.4.5",
+    "Moon.Localization.Json": "1.4.6",
     "Moon.Localization.Validation": "1.0.0-ci"
   },
 

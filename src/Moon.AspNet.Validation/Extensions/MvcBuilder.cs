@@ -1,11 +1,10 @@
 ﻿using System.Linq;
-using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.ModelBinding.Validation;
 using Moon;
 using Moon.AspNet.Validation;
 using Moon.Validation;
 
-namespace Microsoft.Framework.DependencyInjection
+namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
     /// <see cref="IServiceCollection" /> extension methods.
@@ -20,8 +19,6 @@ namespace Microsoft.Framework.DependencyInjection
         public static IMvcBuilder AddValidation(this IMvcBuilder builder, ITextProvider textProvider)
         {
             Requires.NotNull(textProvider, nameof(textProvider));
-
-            var services = builder.Services;
 
             builder.AddViewOptions(o =>
             {
@@ -38,7 +35,7 @@ namespace Microsoft.Framework.DependencyInjection
                 }
             });
 
-            services.Configure<MvcOptions>(o =>
+            builder.AddMvcOptions(o =>
             {
                 o.ModelMetadataDetailsProviders.Add(new ValidationMetadataProvider(textProvider));
             });

@@ -8,13 +8,13 @@
   "tags": [ "moontea", "asp.net", "validation", "annotations" ],
 
   "dependencies": {
-    "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-beta8",
-    "Moon.AspNet.Mvc": "1.2.9",
+    "Microsoft.AspNet.Mvc.DataAnnotations": "6.0.0-*",
+    "Moon.AspNet.Mvc": "1.2.13",
     "Moon.Validation": "1.0.0-ci"
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
+    "net451": { },
+    "dotnet5.4": { }
   }
 }
