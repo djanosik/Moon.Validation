@@ -12,7 +12,7 @@
   },
 
   "frameworks": {
-    "net451": {
+    "net46": {
       "dependencies": {
         "Microsoft.AspNet.Mvc": "5.2.3"
       }

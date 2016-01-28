@@ -5,4 +5,4 @@
 
 Extensions for DataAnnotations and .NET (ASP.NET, DNX, WPF) validation frameworks. If you want to use this library, take a look at sample projects and / or source code.
 
-*(Scripts for client-side validation have not yet been pushed to this repository. Feel free to use scripts from version 3.x.)*
+*A client-side validation solution compatible with KendoUI Validator is comming soon (KendoUI will be supported, but not required).*

@@ -47,7 +47,7 @@ namespace Moon.Web.Validation
                 if (Attribute.TargetValue is bool)
                 {
                     // if it's a bool, format it javascript style (the default is True or False!)
-                    targetValue = targetValue.ToLower();
+                    targetValue = targetValue.ToLowerInvariant();
                 }
             }
 

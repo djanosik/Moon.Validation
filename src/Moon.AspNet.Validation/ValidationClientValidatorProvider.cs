@@ -47,7 +47,7 @@ namespace Moon.AspNet.Validation
 
         static Dictionary<Type, Func<ValidationAttribute, IClientModelValidator>> GetAttributeFactories()
         {
-            return new Dictionary<Type, Func<ValidationAttribute, IClientModelValidator>>()
+            return new Dictionary<Type, Func<ValidationAttribute, IClientModelValidator>>
             {
                 [typeof(DigitsAttribute)] = attr => new DigitsAttributeAdapter((DigitsAttribute)attr),
                 [typeof(DoubleAttribute)] = attr => new DoubleAttributeAdapter((DoubleAttribute)attr),

@@ -8,11 +8,11 @@
   "tags": [ "moontea", "validation", "annotations" ],
 
   "dependencies": {
-    "Moon.Collections": "1.2.4"
+    "Moon.Collections": "2.0.1"
   },
 
   "frameworks": {
-    "net451": {
+    "net46": {
       "frameworkAssemblies": {
         "System.ComponentModel.DataAnnotations": "4.0.0.0"
       }
