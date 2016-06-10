@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Moon.Validation
     class AttributeStore
     {
         readonly ITextProvider textProvider;
-        readonly IDictionary<Type, TypeItem> items = new Dictionary<Type, TypeItem>();
+        readonly ConcurrentDictionary<Type, TypeItem> items = new ConcurrentDictionary<Type, TypeItem>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AttributeStore" /> class.
@@ -68,16 +69,13 @@ namespace Moon.Validation
 
         TypeItem GetTypeItem(Type type)
         {
-            lock (items)
+            TypeItem item;
+            if (!items.TryGetValue(type, out item))
             {
-                TypeItem item;
-                if (!items.TryGetValue(type, out item))
-                {
-                    var attributes = CustomAttributeExtensions.GetCustomAttributes(type.GetTypeInfo(), true);
-                    items[type] = item = new TypeItem(type, attributes, textProvider);
-                }
-                return item;
+                var attributes = CustomAttributeExtensions.GetCustomAttributes(type.GetTypeInfo(), true);
+                items[type] = item = new TypeItem(type, attributes, textProvider);
             }
+            return item;
         }
 
         abstract class StoreItem
@@ -147,7 +145,7 @@ namespace Moon.Validation
         {
             readonly Type objectType;
             readonly object syncRoot = new object();
-            Dictionary<string, PropertyItem> propertyItems;
+            readonly ConcurrentDictionary<string, PropertyItem> propertyItems = new ConcurrentDictionary<string, PropertyItem>();
 
             public TypeItem(Type objectType, IEnumerable<Attribute> attributes, ITextProvider textProvider)
                 : base(textProvider)
@@ -160,15 +158,9 @@ namespace Moon.Validation
 
             public PropertyItem GetPropertyItem(string propertyName)
             {
-                if (propertyItems == null)
+                if (propertyItems.Count == 0)
                 {
-                    lock (syncRoot)
-                    {
-                        if (propertyItems == null)
-                        {
-                            propertyItems = GetPropertyItems();
-                        }
-                    }
+                    AddPropertyItems();
                 }
 
                 if (!propertyItems.ContainsKey(propertyName))
@@ -179,20 +171,16 @@ namespace Moon.Validation
                 return propertyItems[propertyName];
             }
 
-            Dictionary<string, PropertyItem> GetPropertyItems()
+            void AddPropertyItems()
             {
-                var items = new Dictionary<string, PropertyItem>();
-
                 var properties = objectType.GetRuntimeProperties()
                     .Where(p => IsPublic(p) && p.GetIndexParameters().Empty());
 
                 foreach (var property in properties)
                 {
                     var attributes = CustomAttributeExtensions.GetCustomAttributes(property, true);
-                    items[property.Name] = new PropertyItem(objectType, property.Name, attributes, TextProvider);
+                    propertyItems[property.Name] = new PropertyItem(objectType, property.Name, attributes, TextProvider);
                 }
-
-                return items;
             }
 
             bool IsPublic(PropertyInfo property)

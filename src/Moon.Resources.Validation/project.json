@@ -1,11 +1,14 @@
 ﻿{
   "version": "1.0.0-ci",
   "authors": [ "Dusan Janosik" ],
-  "owners": [ "djanosik" ],
-  "projectUrl": "https://github.com/djanosik/Moon.Validation",
-  "iconUrl": "http://moontea.net/moon.png",
   "description": "Makes Moon.Validation attributes localizable by using System.Resources.",
-  "tags": [ "moontea", "validation", "annotations", "resources" ],
+
+  "packOptions": {
+    "owners": [ "djanosik" ],
+    "projectUrl": "https://github.com/djanosik/Moon.Validation",
+    "iconUrl": "https://djanosik.github.io/moon.png",
+    "tags": [ "moon", "validation", "annotations", "resources" ]
+  },
 
   "dependencies": {
     "Moon.Validation": "1.0.0-ci"
@@ -13,6 +16,6 @@
 
   "frameworks": {
     "net46": { },
-    "dotnet5.4": { }
+    "netstandard1.5": { }
   }
 }

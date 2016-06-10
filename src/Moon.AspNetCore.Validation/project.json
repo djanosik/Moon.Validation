@@ -1,18 +1,19 @@
 ﻿{
   "version": "1.0.0-ci",
   "authors": [ "Dusan Janosik" ],
-  "description": "Makes Moon.Validation attributes localizable by using Moon.Localization.",
+  "description": "Extensions for ASP.NET Core MVC validation framework.",
 
   "packOptions": {
     "owners": [ "djanosik" ],
     "projectUrl": "https://github.com/djanosik/Moon.Validation",
     "iconUrl": "https://djanosik.github.io/moon.png",
-    "tags": [ "moon", "validation", "annotations", "localization" ]
+    "tags": [ "moon", "asp.net", "validation", "annotations" ]
   },
 
   "dependencies": {
-    "Moon.Localization": "2.1.3",
-    "Moon.Validation": "1.0.0-ci"
+    "Microsoft.AspNetCore.Mvc": "1.0.0-*",
+    "Moon.Validation": "1.0.0-ci",
+    "Newtonsoft.Json": "9.0.1-*"
   },
 
   "frameworks": {

@@ -1,14 +1,18 @@
 ﻿{
   "version": "1.0.0-ci",
   "authors": [ "Dusan Janosik" ],
-  "owners": [ "djanosik" ],
-  "projectUrl": "https://github.com/djanosik/Moon.Validation",
-  "iconUrl": "http://moontea.net/moon.png",
-  "description": "Extensions for .NET (ASP.NET, DNX, WPF) validation frameworks.",
-  "tags": [ "moontea", "validation", "annotations" ],
+  "description": "Extensions for .NET (ASP.NET, WPF, ...) validation frameworks.",
+
+  "packOptions": {
+    "owners": [ "djanosik" ],
+    "projectUrl": "https://github.com/djanosik/Moon.Validation",
+    "iconUrl": "https://djanosik.github.io/moon.png",
+    "tags": [ "moon", "validation", "annotations" ]
+  },
 
   "dependencies": {
-    "Moon.Collections": "2.0.1"
+    "Moon.Collections": "2.1.1",
+    "Moon.Reflection": "2.1.1"
   },
 
   "frameworks": {
@@ -17,9 +21,10 @@
         "System.ComponentModel.DataAnnotations": "4.0.0.0"
       }
     },
-    "dotnet5.4": {
+    "netstandard1.5": {
       "dependencies": {
-        "System.ComponentModel.Annotations": "4.0.11-*",
+        "System.Collections.Concurrent": "4.0.12-*",
+        "System.ComponentModel.Annotations": "4.1.0-*",
         "System.Linq.Expressions": "4.0.11-*"
       }
     }

@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>754a47d7-0b42-4446-8af9-63937e60534b</ProjectGuid>
-    <RootNamespace>Moon.Localization.Validation</RootNamespace>
+    <ProjectGuid>f9ec5637-9d75-4a6d-8bc3-83726c170994</ProjectGuid>
+    <RootNamespace>Moon.AspNetCore.Validation</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">..\..\artifacts\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
   </PropertyGroup>

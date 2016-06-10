@@ -34,14 +34,14 @@
         "compile": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         },
         "runtime": {
           "lib/net45/System.Web.Helpers.dll": {},
           "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.Web.Infrastructure/1.0.0": {
@@ -53,17 +53,11 @@
           "lib/net40/Microsoft.Web.Infrastructure.dll": {}
         }
       },
-      "Moon.Collections/2.0.1": {
+      "Moon.Collections/2.1.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Runtime": "2.0.1"
+          "Moon.Runtime": "2.1.1"
         },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
         "compile": {
           "lib/net46/Moon.Collections.dll": {}
         },
@@ -71,14 +65,8 @@
           "lib/net46/Moon.Collections.dll": {}
         }
       },
-      "Moon.Contracts/2.0.1": {
+      "Moon.Contracts/2.1.1": {
         "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
         "compile": {
           "lib/net46/Moon.Contracts.dll": {}
         },
@@ -86,17 +74,23 @@
           "lib/net46/Moon.Contracts.dll": {}
         }
       },
-      "Moon.Runtime/2.0.1": {
+      "Moon.Reflection/2.1.1": {
         "type": "package",
         "dependencies": {
-          "Moon.Contracts": "2.0.1"
+          "Moon.Runtime": "2.1.1"
         },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
+        "compile": {
+          "lib/net46/Moon.Reflection.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Moon.Reflection.dll": {}
+        }
+      },
+      "Moon.Runtime/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Moon.Contracts": "2.1.1"
+        },
         "compile": {
           "lib/net46/Moon.Runtime.dll": {}
         },
@@ -108,342 +102,119 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
         "dependencies": {
-          "Moon.Collections": "2.0.1"
+          "Moon.Collections": "2.1.1",
+          "Moon.Reflection": "2.1.1"
         },
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.6/win7-x86": {
-      "Microsoft.AspNet.Mvc/5.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.2.3, 3.3.0)",
-          "Microsoft.AspNet.WebPages": "[3.2.3, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.2.3, 3.3.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      },
-      "Moon.Collections/2.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Moon.Runtime": "2.0.1"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
         ],
         "compile": {
-          "lib/net46/Moon.Collections.dll": {}
+          "net46/Moon.Validation.dll": {}
         },
         "runtime": {
-          "lib/net46/Moon.Collections.dll": {}
+          "net46/Moon.Validation.dll": {}
         }
-      },
-      "Moon.Contracts/2.0.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net46/Moon.Contracts.dll": {}
-        },
-        "runtime": {
-          "lib/net46/Moon.Contracts.dll": {}
-        }
-      },
-      "Moon.Runtime/2.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Moon.Contracts": "2.0.1"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net46/Moon.Runtime.dll": {}
-        },
-        "runtime": {
-          "lib/net46/Moon.Runtime.dll": {}
-        }
-      },
-      "Moon.Validation/1.0.0-ci": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "dependencies": {
-          "Moon.Collections": "2.0.1"
-        },
-        "frameworkAssemblies": [
-          "System.ComponentModel.DataAnnotations"
-        ]
-      }
-    },
-    ".NETFramework,Version=v4.6/win7-x64": {
-      "Microsoft.AspNet.Mvc/5.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.2.3, 3.3.0)",
-          "Microsoft.AspNet.WebPages": "[3.2.3, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Razor/3.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/System.Web.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebPages/3.2.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Razor": "[3.2.3, 3.3.0)",
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {},
-          "lib/net45/System.Web.WebPages.Deployment.dll": {},
-          "lib/net45/System.Web.WebPages.dll": {},
-          "lib/net45/System.Web.WebPages.Razor.dll": {}
-        }
-      },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      },
-      "Moon.Collections/2.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Moon.Runtime": "2.0.1"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net46/Moon.Collections.dll": {}
-        },
-        "runtime": {
-          "lib/net46/Moon.Collections.dll": {}
-        }
-      },
-      "Moon.Contracts/2.0.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net46/Moon.Contracts.dll": {}
-        },
-        "runtime": {
-          "lib/net46/Moon.Contracts.dll": {}
-        }
-      },
-      "Moon.Runtime/2.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Moon.Contracts": "2.0.1"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net46/Moon.Runtime.dll": {}
-        },
-        "runtime": {
-          "lib/net46/Moon.Runtime.dll": {}
-        }
-      },
-      "Moon.Validation/1.0.0-ci": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6",
-        "dependencies": {
-          "Moon.Collections": "2.0.1"
-        },
-        "frameworkAssemblies": [
-          "System.ComponentModel.DataAnnotations"
-        ]
       }
     }
   },
   "libraries": {
-    "Moon.Validation/1.0.0-ci": {
-      "type": "project",
-      "path": "../Moon.Validation/project.json"
-    },
     "Microsoft.AspNet.Mvc/5.2.3": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "i8jZf5QrbcFmjiYWRD7o7qTak/oXKxV80MgP4cZ33A8GC0RBtBIdZ1VHaloGUg+qsHUz5rVkGpwenM+ugDz5PA==",
+      "type": "package",
       "files": [
         "Content/Web.config.install.xdt",
         "Content/Web.config.uninstall.xdt",
-        "lib/net45/System.Web.Mvc.dll",
-        "lib/net45/System.Web.Mvc.xml",
         "Microsoft.AspNet.Mvc.5.2.3.nupkg",
         "Microsoft.AspNet.Mvc.5.2.3.nupkg.sha512",
-        "Microsoft.AspNet.Mvc.nuspec"
+        "Microsoft.AspNet.Mvc.nuspec",
+        "lib/net45/System.Web.Mvc.dll",
+        "lib/net45/System.Web.Mvc.xml"
       ]
     },
     "Microsoft.AspNet.Razor/3.2.3": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "leta+Q73O7+pR8ThTqXmwaNMSqwZQQ3BHfpUHd8S1XaUWe1jRVLitMHqo1AmY7wPNLyankPA1beiUKEGj8Q3Dw==",
+      "type": "package",
       "files": [
-        "lib/net45/System.Web.Razor.dll",
-        "lib/net45/System.Web.Razor.xml",
         "Microsoft.AspNet.Razor.3.2.3.nupkg",
         "Microsoft.AspNet.Razor.3.2.3.nupkg.sha512",
-        "Microsoft.AspNet.Razor.nuspec"
+        "Microsoft.AspNet.Razor.nuspec",
+        "lib/net45/System.Web.Razor.dll",
+        "lib/net45/System.Web.Razor.xml"
       ]
     },
     "Microsoft.AspNet.WebPages/3.2.3": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "zbtxBERla5RE/mhftwbrXOzc0r6lh8WcnjpGW7QQe+PvSDDx1BgsTUGzfCXO/vJznHNpY5oCSYLt8Q5vUu7F0g==",
+      "type": "package",
       "files": [
         "Content/Web.config.install.xdt",
         "Content/Web.config.uninstall.xdt",
+        "Microsoft.AspNet.WebPages.3.2.3.nupkg",
+        "Microsoft.AspNet.WebPages.3.2.3.nupkg.sha512",
+        "Microsoft.AspNet.WebPages.nuspec",
         "lib/net45/System.Web.Helpers.dll",
         "lib/net45/System.Web.Helpers.xml",
         "lib/net45/System.Web.WebPages.Deployment.dll",
         "lib/net45/System.Web.WebPages.Deployment.xml",
-        "lib/net45/System.Web.WebPages.dll",
         "lib/net45/System.Web.WebPages.Razor.dll",
         "lib/net45/System.Web.WebPages.Razor.xml",
-        "lib/net45/System.Web.WebPages.xml",
-        "Microsoft.AspNet.WebPages.3.2.3.nupkg",
-        "Microsoft.AspNet.WebPages.3.2.3.nupkg.sha512",
-        "Microsoft.AspNet.WebPages.nuspec"
+        "lib/net45/System.Web.WebPages.dll",
+        "lib/net45/System.Web.WebPages.xml"
       ]
     },
     "Microsoft.Web.Infrastructure/1.0.0": {
-      "type": "package",
       "sha512": "FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "type": "package",
       "files": [
-        "lib/net40/Microsoft.Web.Infrastructure.dll",
         "Microsoft.Web.Infrastructure.1.0.0.nupkg",
         "Microsoft.Web.Infrastructure.1.0.0.nupkg.sha512",
-        "Microsoft.Web.Infrastructure.nuspec"
+        "Microsoft.Web.Infrastructure.nuspec",
+        "lib/net40/Microsoft.Web.Infrastructure.dll"
       ]
     },
-    "Moon.Collections/2.0.1": {
+    "Moon.Collections/2.1.1": {
+      "sha512": "uPUyloj7dxaytHLr/riMZZQQOeOY15hljF8CGqFT9bHmdgJ+yl4vV6dhinMe1mCFYnCIYyb30EEZ/HoCBxr1EA==",
       "type": "package",
-      "serviceable": true,
-      "sha512": "MBZj1YfZ+WTPZTVWM2WDVS9BQHljzgRdXJ63lpL0kaBdBvTolhLn1frdc3A45iSbKE1ztB9JZVtkwJrrZi9XJA==",
       "files": [
-        "lib/dotnet5.4/Moon.Collections.dll",
-        "lib/dotnet5.4/Moon.Collections.xml",
+        "Moon.Collections.2.1.1.nupkg.sha512",
+        "Moon.Collections.nuspec",
         "lib/net46/Moon.Collections.dll",
-        "lib/net46/Moon.Collections.xml",
-        "Moon.Collections.2.0.1.nupkg",
-        "Moon.Collections.2.0.1.nupkg.sha512",
-        "Moon.Collections.nuspec"
+        "lib/netstandard1.5/Moon.Collections.dll"
       ]
     },
-    "Moon.Contracts/2.0.1": {
+    "Moon.Contracts/2.1.1": {
+      "sha512": "f5Qdb8RxslHEek8Czhj/iLzG1boLUa5FG6U8fTwwIEk1e6wdbrvRArDUM36/pmONEUSosQxZ8MRGrIYx7kVTUg==",
       "type": "package",
-      "serviceable": true,
-      "sha512": "APql5vcnsGysEiINt3AgTcQD/7zpvCWUM5jlXl6usv3IlLfLQHr8YYPTY+1y5N7f26/7H3tkrtFO6/aXbMk+BQ==",
       "files": [
-        "lib/dotnet5.4/Moon.Contracts.dll",
-        "lib/dotnet5.4/Moon.Contracts.xml",
+        "Moon.Contracts.2.1.1.nupkg.sha512",
+        "Moon.Contracts.nuspec",
         "lib/net46/Moon.Contracts.dll",
-        "lib/net46/Moon.Contracts.xml",
-        "Moon.Contracts.2.0.1.nupkg",
-        "Moon.Contracts.2.0.1.nupkg.sha512",
-        "Moon.Contracts.nuspec"
+        "lib/netstandard1.5/Moon.Contracts.dll"
       ]
     },
-    "Moon.Runtime/2.0.1": {
+    "Moon.Reflection/2.1.1": {
+      "sha512": "VCyk+OzZxAhDlOuM7K9PkNcXstHqcyBJ5bsqc+/RMGKSqqTXY9Z31T17DR0MSaJ9qfEuyD1vJkOaGCD4qS09UQ==",
       "type": "package",
-      "serviceable": true,
-      "sha512": "gsXtKc4g7b65vtUdAJDAsY1MnzHY/VSg4j/eeoEDYWqcvNm26HH2nMLeVRfdlFOeSg6O2wzlBEshX2/qHzfCrA==",
       "files": [
-        "lib/dotnet5.4/Moon.Runtime.dll",
-        "lib/dotnet5.4/Moon.Runtime.xml",
-        "lib/net46/Moon.Runtime.dll",
-        "lib/net46/Moon.Runtime.xml",
-        "Moon.Runtime.2.0.1.nupkg",
-        "Moon.Runtime.2.0.1.nupkg.sha512",
-        "Moon.Runtime.nuspec"
+        "Moon.Reflection.2.1.1.nupkg.sha512",
+        "Moon.Reflection.nuspec",
+        "lib/net46/Moon.Reflection.dll",
+        "lib/netstandard1.5/Moon.Reflection.dll"
       ]
+    },
+    "Moon.Runtime/2.1.1": {
+      "sha512": "TA+2Q4QBBmykxzuurzutngpR2DZSP0UWK4gY/3fOpKFNzfHj4eDBIPmtwo2ZPd1+IWLwgkjkm4JOBVgQzWzL9w==",
+      "type": "package",
+      "files": [
+        "Moon.Runtime.2.1.1.nupkg.sha512",
+        "Moon.Runtime.nuspec",
+        "lib/net46/Moon.Runtime.dll",
+        "lib/netstandard1.5/Moon.Runtime.dll"
+      ]
+    },
+    "Moon.Validation/1.0.0-ci": {
+      "type": "project",
+      "path": "../Moon.Validation/project.json",
+      "msbuildProject": "../Moon.Validation/Moon.Validation.xproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -453,5 +224,7 @@
     ".NETFramework,Version=v4.6": [
       "Microsoft.AspNet.Mvc >= 5.2.3"
     ]
-  }
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }

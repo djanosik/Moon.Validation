@@ -1,11 +1,14 @@
 ﻿{
   "version": "1.0.0-ci",
   "authors": [ "Dusan Janosik" ],
-  "owners": [ "djanosik" ],
-  "projectUrl": "https://github.com/djanosik/Moon.Validation",
-  "iconUrl": "http://moontea.net/moon.png",
   "description": "Extensions for WPF validation framework.",
-  "tags": [ "moontea", "wpf", "validation", "annotations" ],
+
+  "packOptions": {
+    "owners": [ "djanosik" ],
+    "projectUrl": "https://github.com/djanosik/Moon.Validation",
+    "iconUrl": "https://djanosik.github.io/moon.png",
+    "tags": [ "moon", "wpf", "validation", "annotations" ]
+  },
 
   "dependencies": {
     "Moon.Validation": "1.0.0-ci"

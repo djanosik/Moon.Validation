@@ -1,0 +1,41 @@
+﻿{
+  "dependencies": {
+    "Microsoft.AspNetCore.Mvc": "1.0.0-*",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-*",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
+    "Microsoft.NETCore.App": {
+      "version": "1.0.0-*",
+      "type": "platform"
+    },
+    "Moon.AspNetCore.Localization": "2.1.3",
+    "Moon.AspNetCore.Mvc": "2.2.1",
+    "Moon.AspNetCore.Validation": "1.0.0-ci",
+    "Moon.Localization.Json": "2.1.3",
+    "Moon.Localization.Validation": "1.0.0-ci"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": { }
+  },
+
+  "scripts": {
+    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+  },
+
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+
+  "runtimeOptions": {
+    "gcServer": true
+  },
+
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "Pages",
+      "web.config"
+    ]
+  }
+}

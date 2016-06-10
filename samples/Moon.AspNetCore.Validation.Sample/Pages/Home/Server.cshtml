@@ -1,0 +1,119 @@
+﻿@using Moon.AspNetCore.Validation.Sample.Pages.Home
+@model FormModel
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Moon.AspNet.Validation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI';
+            font-size: 12px;
+        }
+
+        .label {
+            font-size: 95%;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .editor {
+            margin-top: 5px;
+        }
+
+        .editor input {
+            border: 1px solid black;
+            padding: 6px;
+        }
+
+        .editor .input-validation-error {
+            border-color: red;
+        }
+
+        .editor .field-validation-error {
+            color: red;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div class="label">
+            @Html.LabelFor(m => m.Digits):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.Digits)
+            @Html.ValidationMessageFor(m => m.Digits)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.Double):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.Double)
+            @Html.ValidationMessageFor(m => m.Double)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.TypeRequired):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.TypeRequired)
+            @Html.ValidationMessageFor(m => m.TypeRequired)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.MigthBeRequired):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.MigthBeRequired)
+            @Html.ValidationMessageFor(m => m.MigthBeRequired)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.GreaterThanMin):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.GreaterThanMin)
+            @Html.ValidationMessageFor(m => m.GreaterThanMin)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.Min):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.Min)
+            @Html.ValidationMessageFor(m => m.Min)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.MinMaxLength):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.MinMaxLength)
+            @Html.ValidationMessageFor(m => m.MinMaxLength)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.Required):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.Required)
+            @Html.ValidationMessageFor(m => m.Required)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.RequiredIfDigitsNotEmpty):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.RequiredIfDigitsNotEmpty)
+            @Html.ValidationMessageFor(m => m.RequiredIfDigitsNotEmpty)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.RequiredIfMinNotEqualTo11):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.RequiredIfMinNotEqualTo11)
+            @Html.ValidationMessageFor(m => m.RequiredIfMinNotEqualTo11)
+        </div>
+        <div class="buttons">
+            <input type="submit" value="Send!" />
+        </div>
+    }
+</body>
+</html>
