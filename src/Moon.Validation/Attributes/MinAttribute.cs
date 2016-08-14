@@ -7,7 +7,7 @@ namespace Moon.Validation
     /// <summary>
     /// Specifies that a data field value must be grater than or equal to a specified value.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public class MinAttribute : TypeAttribute
     {
         /// <summary>
@@ -46,11 +46,7 @@ namespace Moon.Validation
         /// <param name="name">The name of the validated property.</param>
         public override string FormatErrorMessage(string name)
         {
-            if (ErrorMessage == null && ErrorMessageResourceName == null)
-            {
-                ErrorMessage = DefaultErrorMessage;
-            }
-
+            EnsureErrorMessage();
             return string.Format(CultureInfo.CurrentCulture, ErrorMessageString,
                 name, MinValue);
         }

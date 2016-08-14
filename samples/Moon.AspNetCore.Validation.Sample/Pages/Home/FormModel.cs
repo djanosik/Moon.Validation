@@ -23,10 +23,10 @@ namespace Moon.AspNetCore.Validation.Sample.Pages.Home
         [Double]
         public double? Double { get; set; }
 
-        public Enum1? TypeRequired { get; set; }
+        public Enum1? TypeInRequired { get; set; }
 
-        [RequiredIfEqual("TypeRequired", Enum1.Required)]
-        public Enum2? MigthBeRequired { get; set; }
+        [RequiredIfEqual("TypeInRequired", Enum1.Required)]
+        public Enum2? MightBeRequired { get; set; }
 
         [GreaterThan("Min")]
         public int GreaterThanMin { get; set; }

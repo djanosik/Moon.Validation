@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Extensions.Localization;
+using Moon.Validation;
 
 namespace Moon.AspNetCore.Validation
 {
@@ -7,14 +9,15 @@ namespace Moon.AspNetCore.Validation
     /// </summary>
     /// <typeparam name="TAttribute">The validation attribute.</typeparam>
     public class CompareAttributeAdapter<TAttribute> : DependentAttributeAdapter<TAttribute>
-        where TAttribute : Moon.Validation.CompareAttribute
+        where TAttribute : CompareAttribute
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CompareAttributeAdapter{TAttribute}" /> class.
         /// </summary>
         /// <param name="validator">The validation attribute.</param>
-        public CompareAttributeAdapter(TAttribute validator)
-            : base(validator)
+        /// <param name="stringLocalizer">The string localizer.</param>
+        public CompareAttributeAdapter(TAttribute validator, IStringLocalizer stringLocalizer)
+            : base(validator, stringLocalizer)
         {
         }
 

@@ -6,7 +6,7 @@ namespace Moon.Validation
     /// <summary>
     /// Specifies that a data field value is valid when it is not equal to the other property value.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public class NotEqualAttribute : CompareAttribute
     {
         /// <summary>

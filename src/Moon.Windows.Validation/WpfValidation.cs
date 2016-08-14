@@ -11,8 +11,8 @@ namespace Moon.Windows.Validation
     /// </summary>
     public static class WpfValidation
     {
-        static readonly MethodInfo addValidationError = typeof(WValidation).GetMethod("AddValidationError", BindingFlags.Static | BindingFlags.NonPublic);
-        static readonly MethodInfo removeValidationError = typeof(WValidation).GetMethod("RemoveValidationError", BindingFlags.Static | BindingFlags.NonPublic);
+        private static readonly MethodInfo addValidationError = typeof(WValidation).GetMethod("AddValidationError", BindingFlags.Static | BindingFlags.NonPublic);
+        private static readonly MethodInfo removeValidationError = typeof(WValidation).GetMethod("RemoveValidationError", BindingFlags.Static | BindingFlags.NonPublic);
 
         /// <summary>
         /// Removes all errors from the specified element.
@@ -39,8 +39,7 @@ namespace Moon.Windows.Validation
         /// </param>
         public static void MarkInvalid(DependencyObject element, object errorContent)
         {
-            addValidationError.Invoke(null, new object[]
-            {
+            addValidationError.Invoke(null, new object[] {
                 new ValidationError(new ExceptionValidationRule(), new object()) { ErrorContent = errorContent },
                 element, true
             });

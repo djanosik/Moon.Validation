@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Globalization;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
-using Moon.AspNetCore.Mvc;
-using Moon.Localization;
-using Moon.Localization.Validation;
 
 namespace Moon.AspNetCore.Validation.Sample
 {
@@ -13,23 +11,32 @@ namespace Moon.AspNetCore.Validation.Sample
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddSingleton<IRazorViewEngine, PagesViewEngine>()
+                .Configure<RazorViewEngineOptions>(o =>
+                {
+                    o.ViewLocationFormats.Clear();
+                    o.ViewLocationFormats.Add("/Pages/{1}/{0}.cshtml");
+                    o.ViewLocationFormats.Add("/Pages/Shared/{0}.cshtml");
+                })
+                .AddLocalization(o => o.ResourcesPath = "Resources")
                 .AddMvc()
-                .AddValidation(new LocalizationTextProvider());
-
-            services.Configure<RouteOptions>(o =>
-            {
-                o.LowercaseUrls = true;
-                o.AppendTrailingSlash = true;
-            });
+                .AddDataAnnotationsLocalization()
+                .AddMoonValidation();
         }
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseLocalization(r =>
-                r.LoadJson("resources"));
+            var cultures = new[] {
+                new CultureInfo("en"),
+                new CultureInfo("cs")
+            };
 
-            app.UseMvc();
+            app
+                .UseRequestLocalization(new RequestLocalizationOptions {
+                    DefaultRequestCulture = new RequestCulture("en"),
+                    SupportedCultures = cultures,
+                    SupportedUICultures = cultures
+                })
+                .UseMvc();
         }
     }
 }

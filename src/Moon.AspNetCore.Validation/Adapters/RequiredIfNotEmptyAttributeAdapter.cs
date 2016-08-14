@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Localization;
 using Moon.Validation;
 
 namespace Moon.AspNetCore.Validation
@@ -11,8 +12,9 @@ namespace Moon.AspNetCore.Validation
         /// Initializes a new instance of the <see cref="RequiredIfNotEmptyAttributeAdapter" /> class.
         /// </summary>
         /// <param name="attribute">The validation attribute.</param>
-        public RequiredIfNotEmptyAttributeAdapter(RequiredIfNotEmptyAttribute attribute)
-            : base(attribute)
+        /// <param name="stringLocalizer">The string localizer.</param>
+        public RequiredIfNotEmptyAttributeAdapter(RequiredIfNotEmptyAttribute attribute, IStringLocalizer stringLocalizer)
+            : base(attribute, stringLocalizer)
         {
         }
 

@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.Extensions.Localization;
 using Moon.Validation;
 
 namespace Moon.AspNetCore.Validation
@@ -12,8 +14,9 @@ namespace Moon.AspNetCore.Validation
         /// Initializes a new instance of the <see cref="MinAttributeAdapter" /> class.
         /// </summary>
         /// <param name="attribute">The validation attribute.</param>
-        public MinAttributeAdapter(MinAttribute attribute)
-            : base(attribute)
+        /// <param name="stringLocalizer">The string localizer.</param>
+        public MinAttributeAdapter(MinAttribute attribute, IStringLocalizer stringLocalizer)
+            : base(attribute, stringLocalizer)
         {
         }
 
@@ -22,6 +25,13 @@ namespace Moon.AspNetCore.Validation
         /// </summary>
         protected override string ValidationType
             => "range";
+
+        /// <summary>
+        /// Gets the client validation error message.
+        /// </summary>
+        /// <param name="validationContext">The validation context.</param>
+        public override string GetErrorMessage(ModelValidationContextBase validationContext)
+            => GetErrorMessage(validationContext.ModelMetadata, validationContext.ModelMetadata.GetDisplayName(), Attribute.MinValue);
 
         /// <summary>
         /// Returns a dictionary containing client validation parameters.

@@ -16,31 +16,22 @@
             margin-top: 10px;
         }
 
-        .editor {
-            margin-top: 5px;
-        }
+        .editor { margin-top: 5px; }
 
         .editor input {
             border: 1px solid black;
             padding: 6px;
         }
 
-        .editor .input-validation-error {
-            border-color: red;
-        }
+        .editor .input-validation-error { border-color: red; }
 
-        .editor .field-validation-error {
-            color: red;
-        }
+        .editor .field-validation-error { color: red; }
 
-        .buttons {
-            margin-top: 10px;
-        }
+        .buttons { margin-top: 10px; }
     </style>
 </head>
 <body>
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         <div class="label">
             @Html.LabelFor(m => m.Digits):
         </div>
@@ -56,18 +47,18 @@
             @Html.ValidationMessageFor(m => m.Double)
         </div>
         <div class="label">
-            @Html.LabelFor(m => m.TypeRequired):
+            @Html.LabelFor(m => m.TypeInRequired):
         </div>
         <div class="editor">
-            @Html.EditorFor(m => m.TypeRequired)
-            @Html.ValidationMessageFor(m => m.TypeRequired)
+            @Html.EditorFor(m => m.TypeInRequired)
+            @Html.ValidationMessageFor(m => m.TypeInRequired)
         </div>
         <div class="label">
-            @Html.LabelFor(m => m.MigthBeRequired):
+            @Html.LabelFor(m => m.MightBeRequired):
         </div>
         <div class="editor">
-            @Html.EditorFor(m => m.MigthBeRequired)
-            @Html.ValidationMessageFor(m => m.MigthBeRequired)
+            @Html.EditorFor(m => m.MightBeRequired)
+            @Html.ValidationMessageFor(m => m.MightBeRequired)
         </div>
         <div class="label">
             @Html.LabelFor(m => m.GreaterThanMin):
@@ -112,7 +103,7 @@
             @Html.ValidationMessageFor(m => m.RequiredIfMinNotEqualTo11)
         </div>
         <div class="buttons">
-            <input type="submit" value="Send!" />
+            <input type="submit" value="Send!"/>
         </div>
     }
 </body>

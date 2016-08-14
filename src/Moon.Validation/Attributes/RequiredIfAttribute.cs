@@ -9,7 +9,7 @@ namespace Moon.Validation
     /// </summary>
     public abstract class RequiredIfAttribute : DependentAttribute, IValidatorNameProvider
     {
-        readonly RequiredAttribute reqValidator = new RequiredAttribute();
+        private readonly RequiredAttribute reqValidator = new RequiredAttribute();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RequiredIfAttribute" /> class.
@@ -32,7 +32,13 @@ namespace Moon.Validation
         /// <summary>
         /// Gets the value that will be compared to the value of the <see cref="DependentAttribute.OtherProperty" />.
         /// </summary>
-        public object TargetValue { get; private set; }
+        public object TargetValue { get; }
+
+        /// <summary>
+        /// Gets the default error message.
+        /// </summary>
+        public override string DefaultErrorMessage
+            => "The {0} field is required.";
 
         /// <summary>
         /// Gets the name of the validator.
@@ -46,6 +52,7 @@ namespace Moon.Validation
         /// <param name="name">The name of the validated property.</param>
         public override string FormatErrorMessage(string name)
         {
+            EnsureErrorMessage();
             UpdateInnerValidator();
             return reqValidator.FormatErrorMessage(name);
         }
@@ -56,7 +63,7 @@ namespace Moon.Validation
         /// <param name="value">The value to validate.</param>
         /// <param name="otherValue">The value of the property the validator is dependent on.</param>
         /// <param name="validationContext">The validation context.</param>
-        protected override sealed bool IsValidValue(object value, object otherValue, ValidationContext validationContext)
+        protected sealed override bool IsValidValue(object value, object otherValue, ValidationContext validationContext)
         {
             if (Operator.Compare(otherValue, TargetValue))
             {
@@ -66,7 +73,7 @@ namespace Moon.Validation
             return true;
         }
 
-        void UpdateInnerValidator()
+        private void UpdateInnerValidator()
         {
             reqValidator.ErrorMessage = ErrorMessage;
             reqValidator.ErrorMessageResourceName = ErrorMessageResourceName;

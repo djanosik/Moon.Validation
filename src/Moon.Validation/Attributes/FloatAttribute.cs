@@ -6,7 +6,7 @@ namespace Moon.Validation
     /// <summary>
     /// Specifies that a data field value must be a float.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public class FloatAttribute : TypeAttribute
     {
         /// <summary>

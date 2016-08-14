@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.Extensions.Localization;
 using Moon.Validation;
 
 namespace Moon.AspNetCore.Validation
@@ -16,8 +17,9 @@ namespace Moon.AspNetCore.Validation
         /// Initializes a new instance of the <see cref="DependentAttributeAdapter{TAttribute}" /> class.
         /// </summary>
         /// <param name="attribute">The validation attribute.</param>
-        protected DependentAttributeAdapter(TAttribute attribute)
-            : base(attribute)
+        /// <param name="stringLocalizer">The string localizer.</param>
+        protected DependentAttributeAdapter(TAttribute attribute, IStringLocalizer stringLocalizer)
+            : base(attribute, stringLocalizer)
         {
         }
 
@@ -32,6 +34,18 @@ namespace Moon.AspNetCore.Validation
         }
 
         /// <summary>
+        /// Gets the client validation error message.
+        /// </summary>
+        /// <param name="validationContext">The validation context.</param>
+        public override string GetErrorMessage(ModelValidationContextBase validationContext)
+        {
+            Attribute.OtherPropertyDisplayName = GetOtherPropertyDisplayName(validationContext);
+
+            return GetErrorMessage(validationContext.ModelMetadata, validationContext.ModelMetadata.GetDisplayName(),
+                Attribute.OtherPropertyDisplayName);
+        }
+
+        /// <summary>
         /// Returns a dictionary containing client validation parameters.
         /// </summary>
         protected override IDictionary<string, object> GetClientValidationParameters()
@@ -41,7 +55,7 @@ namespace Moon.AspNetCore.Validation
             return parameters;
         }
 
-        string GetOtherPropertyDisplayName(ClientModelValidationContext context)
+        private string GetOtherPropertyDisplayName(ModelValidationContextBase context)
         {
             var metadata = context.ModelMetadata;
             var otherPropertyDisplayName = Attribute.OtherPropertyDisplayName;

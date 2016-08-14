@@ -3,7 +3,7 @@
 namespace Moon.Validation
 {
     /// <summary>
-    /// Serves as the base class for data validators.
+    /// The base class for data validators.
     /// </summary>
     public abstract class ValAttribute : ValidationAttribute
     {
@@ -19,10 +19,7 @@ namespace Moon.Validation
         /// <param name="name">The name of the validated property.</param>
         public override string FormatErrorMessage(string name)
         {
-            if (ErrorMessage == null && ErrorMessageResourceName == null)
-            {
-                ErrorMessage = DefaultErrorMessage;
-            }
+            EnsureErrorMessage();
             return base.FormatErrorMessage(name);
         }
 
@@ -31,14 +28,14 @@ namespace Moon.Validation
         /// </summary>
         /// <param name="value">The value to validate.</param>
         /// <param name="validationContext">The validation context.</param>
-        protected override sealed ValidationResult IsValid(object value, ValidationContext validationContext)
+        protected sealed override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var result = ValidationResult.Success;
 
             if (!IsValidValue(value, validationContext))
             {
                 var memberNames = validationContext.MemberName != null ? new[] { validationContext.MemberName } : null;
-                result = new ValidationResult(FormatErrorMessage(validationContext.DisplayName), memberNames);
+                result = new ValidationResult(FormatErrorMessage(validationContext.DisplayName) ?? DefaultErrorMessage, memberNames);
             }
 
             return result;
@@ -50,5 +47,16 @@ namespace Moon.Validation
         /// <param name="value">The value to validate.</param>
         /// <param name="validationContext">The validation context.</param>
         protected abstract bool IsValidValue(object value, ValidationContext validationContext);
+
+        /// <summary>
+        /// Ensures that the <see cref="ValidationAttribute.ErrorMessage" /> property has a value.
+        /// </summary>
+        protected void EnsureErrorMessage()
+        {
+            if (string.IsNullOrEmpty(ErrorMessage) && string.IsNullOrEmpty(ErrorMessageResourceName) && ErrorMessageResourceType == null)
+            {
+                ErrorMessage = DefaultErrorMessage;
+            }
+        }
     }
 }

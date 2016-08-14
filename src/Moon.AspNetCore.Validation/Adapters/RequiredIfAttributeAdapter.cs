@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Microsoft.Extensions.Localization;
 using Moon.Validation;
 
 namespace Moon.AspNetCore.Validation
@@ -16,8 +17,9 @@ namespace Moon.AspNetCore.Validation
         /// Initializes a new instance of the <see cref="RequiredIfAttributeAdapter{TAttribute}" /> class.
         /// </summary>
         /// <param name="attribute">The validation attribute.</param>
-        public RequiredIfAttributeAdapter(TAttribute attribute)
-            : base(attribute)
+        /// <param name="stringLocalizer">The string localizer.</param>
+        public RequiredIfAttributeAdapter(TAttribute attribute, IStringLocalizer stringLocalizer)
+            : base(attribute, stringLocalizer)
         {
         }
 

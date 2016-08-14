@@ -7,7 +7,7 @@ namespace Moon.Validation
     /// Specifies that a data field value is valid when it is less than or equal to the other
     /// property value.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public class LessThanOrEqualAttribute : CompareAttribute
     {
         /// <summary>

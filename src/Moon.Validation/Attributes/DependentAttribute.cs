@@ -40,11 +40,7 @@ namespace Moon.Validation
         /// <param name="name">The name of the validated property.</param>
         public override string FormatErrorMessage(string name)
         {
-            if (ErrorMessage == null && ErrorMessageResourceName == null)
-            {
-                ErrorMessage = DefaultErrorMessage;
-            }
-
+            EnsureErrorMessage();
             return string.Format(CultureInfo.CurrentCulture, ErrorMessageString, name,
                 OtherPropertyDisplayName ?? OtherProperty);
         }
@@ -54,7 +50,7 @@ namespace Moon.Validation
         /// </summary>
         /// <param name="value">The value to validate.</param>
         /// <param name="validationContext">The validation context.</param>
-        protected override sealed bool IsValidValue(object value, ValidationContext validationContext)
+        protected sealed override bool IsValidValue(object value, ValidationContext validationContext)
             => IsValidValue(value, GetOtherPropertyValue(validationContext), validationContext);
 
         /// <summary>
@@ -64,8 +60,8 @@ namespace Moon.Validation
         /// <param name="otherValue">The value of the property the validator is dependent on.</param>
         /// <param name="validationContext">The validation context.</param>
         protected abstract bool IsValidValue(object value, object otherValue, ValidationContext validationContext);
-        
-        object GetOtherPropertyValue(ValidationContext validationContext)
+
+        private object GetOtherPropertyValue(ValidationContext validationContext)
         {
             var currentType = validationContext.ObjectType;
             var value = validationContext.ObjectInstance;

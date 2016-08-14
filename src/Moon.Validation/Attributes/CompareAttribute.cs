@@ -28,6 +28,9 @@ namespace Moon.Validation
         /// <summary>
         /// Gets the operator used to compare values.
         /// </summary>
+        /// <value>
+        /// The operator.
+        /// </value>
         public IOperator Operator { get; }
 
         /// <summary>
@@ -36,7 +39,7 @@ namespace Moon.Validation
         /// <param name="value">The value to validate.</param>
         /// <param name="otherValue">The value of the property the validator is dependent on.</param>
         /// <param name="validationContext">The validation context.</param>
-        protected override sealed bool IsValidValue(object value, object otherValue, ValidationContext validationContext)
+        protected sealed override bool IsValidValue(object value, object otherValue, ValidationContext validationContext)
         {
             var oneIsNull = value == null || otherValue == null;
             return oneIsNull || Operator.Compare(value, otherValue);

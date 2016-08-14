@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using Microsoft.AspNetCore.Mvc.DataAnnotations.Internal;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.Extensions.Localization;
 
 namespace Moon.AspNetCore.Validation
 {
@@ -18,8 +19,9 @@ namespace Moon.AspNetCore.Validation
         /// Initializes a new instance of the <see cref="AttributeAdapter{TAttribute}" /> class.
         /// </summary>
         /// <param name="attribute">The validation attribute.</param>
-        protected AttributeAdapter(TAttribute attribute)
-            : base(attribute, null)
+        /// <param name="stringLocalizer">The string localizer.</param>
+        protected AttributeAdapter(TAttribute attribute, IStringLocalizer stringLocalizer)
+            : base(attribute, stringLocalizer)
         {
         }
 
@@ -55,7 +57,7 @@ namespace Moon.AspNetCore.Validation
         /// </summary>
         /// <param name="validationContext">The validation context.</param>
         public override string GetErrorMessage(ModelValidationContextBase validationContext)
-            => Attribute.FormatErrorMessage(validationContext.ModelMetadata.GetDisplayName());
+            => GetErrorMessage(validationContext.ModelMetadata, validationContext.ModelMetadata.GetDisplayName());
 
         /// <summary>
         /// Returns a dictionary containing client validation parameters.

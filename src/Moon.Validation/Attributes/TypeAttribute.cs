@@ -8,7 +8,7 @@ namespace Moon.Validation
     public abstract class TypeAttribute : DataTypeAttribute
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataTypeValidator" /> class.
+        /// Initializes a new instance of the <see cref="TypeAttribute" /> class.
         /// </summary>
         /// <param name="type">The data type.</param>
         protected TypeAttribute(DataType type)
@@ -17,7 +17,7 @@ namespace Moon.Validation
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataTypeValidator" /> class.
+        /// Initializes a new instance of the <see cref="TypeAttribute" /> class.
         /// </summary>
         /// <param name="customType">The custom data type.</param>
         protected TypeAttribute(string customType)
@@ -37,10 +37,7 @@ namespace Moon.Validation
         /// <param name="name">The name of the validated property.</param>
         public override string FormatErrorMessage(string name)
         {
-            if (ErrorMessage == null && ErrorMessageResourceName == null)
-            {
-                ErrorMessage = DefaultErrorMessage;
-            }
+            EnsureErrorMessage();
             return base.FormatErrorMessage(name);
         }
 
@@ -49,7 +46,7 @@ namespace Moon.Validation
         /// </summary>
         /// <param name="value">The value to validate.</param>
         /// <param name="validationContext">The validation context.</param>
-        protected override sealed ValidationResult IsValid(object value, ValidationContext validationContext)
+        protected sealed override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var result = ValidationResult.Success;
 
@@ -68,5 +65,16 @@ namespace Moon.Validation
         /// <param name="value">The value to validate.</param>
         /// <param name="validationContext">The validation context.</param>
         protected abstract bool IsValidValue(object value, ValidationContext validationContext);
+
+        /// <summary>
+        /// Ensures that the <see cref="ValidationAttribute.ErrorMessage" /> property has a value.
+        /// </summary>
+        protected void EnsureErrorMessage()
+        {
+            if (string.IsNullOrEmpty(ErrorMessage) && string.IsNullOrEmpty(ErrorMessageResourceName) && ErrorMessageResourceType == null)
+            {
+                ErrorMessage = DefaultErrorMessage;
+            }
+        }
     }
 }

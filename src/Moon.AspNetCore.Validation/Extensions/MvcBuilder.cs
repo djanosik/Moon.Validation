@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc.DataAnnotations.Internal;
-using Moon;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
 using Moon.AspNetCore.Validation;
-using Moon.Validation;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -15,32 +15,17 @@ namespace Microsoft.Extensions.DependencyInjection
         /// Adds services required to use localizable validation attributes.
         /// </summary>
         /// <param name="builder">The ASP.NET MVC builder.</param>
-        /// <param name="textProvider">The validation text provider.</param>
-        public static IMvcBuilder AddValidation(this IMvcBuilder builder, ITextProvider textProvider)
+        public static IMvcBuilder AddMoonValidation(this IMvcBuilder builder)
         {
-            Requires.NotNull(textProvider, nameof(textProvider));
-
-            builder.AddViewOptions(o =>
-            {
-                var numericProvider = o.ClientModelValidatorProviders
-                    .OfType<NumericClientModelValidatorProvider>()
-                    .FirstOrDefault();
-
-                o.ClientModelValidatorProviders.Add(new ValidationClientValidatorProvider(textProvider));
-
-                if (numericProvider != null)
-                {
-                    // it would conflict with our client-side rules for Double and Float attributes
-                    o.ClientModelValidatorProviders.Remove(numericProvider);
-                }
-            });
-
-            builder.AddMvcOptions(o =>
-            {
-                o.ModelMetadataDetailsProviders.Add(new ValidationMetadataProvider(textProvider));
-            });
-
+            AddMoonValidationServices(builder.Services);
             return builder;
+        }
+
+        private static void AddMoonValidationServices(IServiceCollection services)
+        {
+            services.TryAddEnumerable(ServiceDescriptor.Transient<IConfigureOptions<MvcOptions>, MoonValidationMvcOptionsSetup>());
+            services.TryAddEnumerable(ServiceDescriptor.Transient<IConfigureOptions<MvcViewOptions>, MoonValidationMvcViewOptionsSetup>());
+            services.Replace(ServiceDescriptor.Singleton<IValidationAttributeAdapterProvider, MoonValidationAttributeAdapterProvider>());
         }
     }
 }

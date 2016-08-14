@@ -10,7 +10,7 @@ namespace Moon.Validation
     /// </summary>
     public static class ValidationAttributeExtensions
     {
-        static PropertyInfo routeDataProp;
+        private static PropertyInfo routeDataProp;
 
         /// <summary>
         /// Returns the name of the validator.
@@ -36,7 +36,8 @@ namespace Moon.Validation
         }
 
         /// <summary>
-        /// Sets the <see cref="DependentAttribute.OtherPropertyDisplayName"/> property if the attribute is of type <see cref="DependentAttribute"/>.
+        /// Sets the <see cref="DependentAttribute.OtherPropertyDisplayName" /> property if the attribute is of type
+        /// <see cref="DependentAttribute" />.
         /// </summary>
         /// <param name="attribute">The validation attribute.</param>
         /// <param name="getDisplayName">The function used to get the display name.</param>
@@ -48,10 +49,9 @@ namespace Moon.Validation
             {
                 dependent.OtherPropertyDisplayName = getDisplayName(dependent.OtherProperty);
             }
-
         }
 
-        static string GetRemoteValidatorName(ValidationAttribute attribute)
+        private static string GetRemoteValidatorName(ValidationAttribute attribute)
         {
             if (routeDataProp == null)
             {

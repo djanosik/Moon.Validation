@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
+using Microsoft.Extensions.Localization;
 using Moon.Collections;
 
 namespace Moon.Validation
@@ -11,18 +12,18 @@ namespace Moon.Validation
     /// <summary>
     /// The cache of Validation and Display attributes.
     /// </summary>
-    class AttributeStore
+    internal class AttributeStore
     {
-        readonly ITextProvider textProvider;
-        readonly ConcurrentDictionary<Type, TypeItem> items = new ConcurrentDictionary<Type, TypeItem>();
+        private readonly ConcurrentDictionary<Type, TypeItem> items = new ConcurrentDictionary<Type, TypeItem>();
+        private readonly IStringLocalizerFactory stringLocalizerFactory;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AttributeStore" /> class.
         /// </summary>
-        /// <param name="textProvider">The validation text provider.</param>
-        public AttributeStore(ITextProvider textProvider)
+        /// <param name="stringLocalizerFactory">The string localizer factory.</param>
+        public AttributeStore(IStringLocalizerFactory stringLocalizerFactory)
         {
-            this.textProvider = textProvider;
+            this.stringLocalizerFactory = stringLocalizerFactory;
         }
 
         /// <summary>
@@ -30,20 +31,14 @@ namespace Moon.Validation
         /// </summary>
         /// <param name="objectContext">The context that describes the type.</param>
         public string GetTypeDisplayName(ValidationContext objectContext)
-        {
-            var typeItem = GetTypeItem(objectContext.ObjectType);
-            return typeItem.DisplayAttribute.Name;
-        }
+            => GetTypeItem(objectContext.ObjectType).DisplayName;
 
         /// <summary>
         /// Retrieves the type level validation attributes for the given type.
         /// </summary>
         /// <param name="objectContext">The context that describes the type.</param>
         public IEnumerable<ValidationAttribute> GetTypeValidationAttributes(ValidationContext objectContext)
-        {
-            var typeItem = GetTypeItem(objectContext.ObjectType);
-            return typeItem.ValidationAttributes;
-        }
+            => GetTypeItem(objectContext.ObjectType).ValidationAttributes;
 
         /// <summary>
         /// Retrieves the display name associated with the given property.
@@ -53,7 +48,7 @@ namespace Moon.Validation
         {
             var typeItem = GetTypeItem(propertyContext.ObjectType);
             var propertyItem = typeItem.GetPropertyItem(propertyContext.MemberName);
-            return propertyItem.DisplayAttribute.Name;
+            return propertyItem.DisplayName;
         }
 
         /// <summary>
@@ -67,71 +62,74 @@ namespace Moon.Validation
             return propertyItem.ValidationAttributes;
         }
 
-        TypeItem GetTypeItem(Type type)
+        private IStringLocalizer GetStringLocalizer(Type objectType)
+        {
+            IStringLocalizer stringLocalizer = null;
+            var providerFactory = DataValidator.LocalizerProvider;
+
+            if (stringLocalizerFactory != null && providerFactory != null)
+            {
+                stringLocalizer = providerFactory(objectType, stringLocalizerFactory);
+            }
+
+            return stringLocalizer;
+        }
+
+        private TypeItem GetTypeItem(Type type)
         {
             TypeItem item;
             if (!items.TryGetValue(type, out item))
             {
                 var attributes = CustomAttributeExtensions.GetCustomAttributes(type.GetTypeInfo(), true);
-                items[type] = item = new TypeItem(type, attributes, textProvider);
+                items[type] = item = new TypeItem(this, type, attributes);
             }
             return item;
         }
 
-        abstract class StoreItem
+        private abstract class StoreItem
         {
-            protected StoreItem(ITextProvider textProvider)
+            protected StoreItem(AttributeStore store)
             {
-                TextProvider = textProvider;
+                Store = store;
             }
 
-            public DisplayAttribute DisplayAttribute { get; protected set; }
+            public string DisplayName { get; protected set; }
 
             public IEnumerable<ValidationAttribute> ValidationAttributes { get; protected set; }
 
-            public ITextProvider TextProvider { get; }
+            protected AttributeStore Store { get; }
 
-            protected DisplayAttribute GetDisplayAttribute(IEnumerable<Attribute> attributes, Type objectType, string propertyName = null)
+            protected string GetDisplayName(IEnumerable<Attribute> attributes, Type objectType, string propertyName = null)
             {
-                var displayAttribute = attributes.OfType<DisplayAttribute>()
-                    .FirstOrDefault() ?? new DisplayAttribute();
+                var displayAttribute = attributes.OfType<DisplayAttribute>().FirstOrDefault();
 
-                if (!string.IsNullOrEmpty(displayAttribute.Name))
+                if (propertyName != null)
                 {
-                    return displayAttribute;
+                    var stringLocalizer = Store.GetStringLocalizer(objectType);
+
+                    if (stringLocalizer != null && displayAttribute?.ResourceType == null)
+                    {
+                        return stringLocalizer[displayAttribute?.GetName() ?? propertyName];
+                    }
                 }
 
-                displayAttribute.ResourceType = null;
-
-                displayAttribute.Name = !string.IsNullOrWhiteSpace(propertyName)
-                    ? TextProvider.GetDisplayName(objectType, propertyName)
-                    : TextProvider.GetDisplayName(objectType);
-
-                return displayAttribute;
+                return displayAttribute?.GetName();
             }
 
             protected IEnumerable<ValidationAttribute> GetValidationAttributes(IEnumerable<Attribute> attributes, Type objectType, string propertyName = null)
             {
                 var results = new List<ValidationAttribute>();
 
-                var validationAttributes = attributes.OfType<ValidationAttribute>()
-                    .Where(x => string.IsNullOrEmpty(x.ErrorMessage));
-
-                foreach (var attribute in validationAttributes)
+                foreach (var attribute in attributes.OfType<ValidationAttribute>())
                 {
                     var validatorName = attribute.GetValidatorName();
-                    var messageKey = attribute.ErrorMessageResourceName;
+                    var stringLocalizer = Store.GetStringLocalizer(objectType);
 
-                    attribute.ErrorMessageResourceType = null;
-                    attribute.ErrorMessageResourceName = null;
-
-                    attribute.ErrorMessage = !string.IsNullOrWhiteSpace(propertyName)
-                        ? TextProvider.GetErrorMessage(objectType, propertyName, validatorName, messageKey)
-                        : TextProvider.GetErrorMessage(objectType, validatorName, messageKey);
-
-                    if (attribute.ErrorMessage == null)
+                    if (stringLocalizer != null && ShouldUpdateErrorMessage(attribute))
                     {
-                        continue;
+                        attribute.ErrorMessage = propertyName != null
+                            ? stringLocalizer[$"{propertyName}_{validatorName}"]
+                            : stringLocalizer[validatorName];
                     }
 
                     results.Add(attribute);
@@ -139,21 +137,24 @@ namespace Moon.Validation
 
                 return results;
             }
+
+            private bool ShouldUpdateErrorMessage(ValidationAttribute attribute)
+                => string.IsNullOrEmpty(attribute.ErrorMessage) &&
+                string.IsNullOrEmpty(attribute.ErrorMessageResourceName) &&
+                attribute.ErrorMessageResourceType == null;
         }
 
-        class TypeItem : StoreItem
+        private class TypeItem : StoreItem
         {
-            readonly Type objectType;
-            readonly object syncRoot = new object();
-            readonly ConcurrentDictionary<string, PropertyItem> propertyItems = new ConcurrentDictionary<string, PropertyItem>();
+            private readonly Type objectType;
+            private readonly ConcurrentDictionary<string, PropertyItem> propertyItems = new ConcurrentDictionary<string, PropertyItem>();
 
-            public TypeItem(Type objectType, IEnumerable<Attribute> attributes, ITextProvider textProvider)
-                : base(textProvider)
+            public TypeItem(AttributeStore store, Type objectType, IEnumerable<Attribute> attributes)
+                : base(store)
             {
-                this.objectType = objectType;
-
+                DisplayName = GetDisplayName(attributes, objectType);
                 ValidationAttributes = GetValidationAttributes(attributes, objectType);
-                DisplayAttribute = GetDisplayAttribute(attributes, objectType);
+                this.objectType = objectType;
             }
 
             public PropertyItem GetPropertyItem(string propertyName)
@@ -171,7 +172,7 @@ namespace Moon.Validation
                 return propertyItems[propertyName];
             }
 
-            void AddPropertyItems()
+            private void AddPropertyItems()
             {
                 var properties = objectType.GetRuntimeProperties()
                     .Where(p => IsPublic(p) && p.GetIndexParameters().Empty());
@@ -179,24 +180,24 @@ namespace Moon.Validation
                 foreach (var property in properties)
                 {
                     var attributes = CustomAttributeExtensions.GetCustomAttributes(property, true);
-                    propertyItems[property.Name] = new PropertyItem(objectType, property.Name, attributes, TextProvider);
+                    propertyItems[property.Name] = new PropertyItem(Store, objectType, property.Name, attributes);
                 }
             }
 
-            bool IsPublic(PropertyInfo property)
+            private bool IsPublic(PropertyInfo property)
             {
-                return (property.GetMethod != null && property.GetMethod.IsPublic)
-                    || (property.SetMethod != null && property.SetMethod.IsPublic);
+                return property.GetMethod != null && property.GetMethod.IsPublic
+                    || property.SetMethod != null && property.SetMethod.IsPublic;
             }
         }
 
-        class PropertyItem : StoreItem
+        private class PropertyItem : StoreItem
         {
-            public PropertyItem(Type objectType, string propertyName, IEnumerable<Attribute> attributes, ITextProvider textProvider)
-                : base(textProvider)
+            public PropertyItem(AttributeStore store, Type objectType, string propertyName, IEnumerable<Attribute> attributes)
+                : base(store)
             {
+                DisplayName = GetDisplayName(attributes, objectType, propertyName);
                 ValidationAttributes = GetValidationAttributes(attributes, objectType, propertyName);
-                DisplayAttribute = GetDisplayAttribute(attributes, objectType, propertyName);
             }
         }
     }

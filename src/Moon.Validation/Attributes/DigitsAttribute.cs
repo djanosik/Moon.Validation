@@ -6,7 +6,7 @@ namespace Moon.Validation
     /// <summary>
     /// Specifies that a data field value should contain only digits.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property)]
     public class DigitsAttribute : TypeAttribute
     {
         /// <summary>

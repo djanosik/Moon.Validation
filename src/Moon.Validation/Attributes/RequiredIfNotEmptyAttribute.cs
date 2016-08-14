@@ -6,11 +6,10 @@ namespace Moon.Validation
     /// <summary>
     /// Specifies that a data field value is required when the other property value is not empty.
     /// </summary>
-    /// RequiredIfNotEmpty
     [AttributeUsage(AttributeTargets.Property)]
     public class RequiredIfNotEmptyAttribute : DependentAttribute, IValidatorNameProvider
     {
-        readonly RequiredAttribute reqValidator = new RequiredAttribute();
+        private readonly RequiredAttribute reqValidator = new RequiredAttribute();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RequiredIfNotEmptyAttribute" /> class.
@@ -22,11 +21,18 @@ namespace Moon.Validation
         }
 
         /// <summary>
+        /// Gets the default error message.
+        /// </summary>
+        public override string DefaultErrorMessage
+            => "The {0} field is required.";
+
+        /// <summary>
         /// Applies formatting to an error message, based on the data field where the error occurred.
         /// </summary>
         /// <param name="name">The name of the validated property.</param>
         public override string FormatErrorMessage(string name)
         {
+            EnsureErrorMessage();
             UpdateInnerValidator();
             return reqValidator.FormatErrorMessage(name);
         }
@@ -53,7 +59,7 @@ namespace Moon.Validation
             return true;
         }
 
-        bool IsNotEmpty(object otherValue)
+        private bool IsNotEmpty(object otherValue)
         {
             var strValue = otherValue as string;
 
@@ -65,7 +71,7 @@ namespace Moon.Validation
             return otherValue != null;
         }
 
-        void UpdateInnerValidator()
+        private void UpdateInnerValidator()
         {
             reqValidator.ErrorMessage = ErrorMessage;
             reqValidator.ErrorMessageResourceName = ErrorMessageResourceName;
