@@ -17,8 +17,8 @@
   "frameworks": {
     "net46": {
       "frameworkAssemblies": {
-        "PresentationFramework": "4.0.0.0",
-        "WindowsBase": "4.0.0.0"
+        "PresentationFramework": "4.0.0",
+        "WindowsBase": "4.0.0"
       }
     }
   }

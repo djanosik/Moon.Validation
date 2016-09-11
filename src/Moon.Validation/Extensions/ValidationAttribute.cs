@@ -5,9 +5,6 @@ using System.Reflection;
 
 namespace Moon.Validation
 {
-    /// <summary>
-    /// <see cref="ValidationAttribute" /> extension methods.
-    /// </summary>
     public static class ValidationAttributeExtensions
     {
         private static PropertyInfo routeDataProp;

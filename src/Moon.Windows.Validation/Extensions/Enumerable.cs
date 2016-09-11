@@ -5,9 +5,6 @@ using System.Windows;
 
 namespace Moon.Windows.Validation
 {
-    /// <summary>
-    /// <see cref="IEnumerable{T}" /> extension methods
-    /// </summary>
     public static class EnumerableExtensions
     {
         /// <summary>

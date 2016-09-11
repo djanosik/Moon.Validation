@@ -12,21 +12,18 @@
 
   "dependencies": {
     "Microsoft.Extensions.Localization": "1.0.0",
-    "Moon.Collections": "2.2.3",
-    "Moon.Reflection": "2.2.3"
+    "Moon.Collections": "2.2.7"
   },
 
   "frameworks": {
     "net46": {
       "frameworkAssemblies": {
-        "System.ComponentModel.DataAnnotations": "4.0.0.0"
+        "System.ComponentModel.DataAnnotations": "4.0.0"
       }
     },
-    "netstandard1.5": {
+    "netstandard1.3": {
       "dependencies": {
-        "System.Collections.Concurrent": "4.0.12",
-        "System.ComponentModel.Annotations": "4.1.0",
-        "System.Linq.Expressions": "4.1.0"
+        "System.ComponentModel.Annotations": "4.1.0"
       }
     }
   }

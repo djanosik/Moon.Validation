@@ -4,9 +4,6 @@ using System.Linq;
 
 namespace Moon.Validation
 {
-    /// <summary>
-    /// <see cref="IEnumerable{T}" /> extension methods
-    /// </summary>
     public static class EnumerableExtensions
     {
         /// <summary>

@@ -12,6 +12,7 @@
 
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.0.0",
+    "Moon.AspNetCore": "2.3.6",
     "Moon.Validation": "1.0.0-ci",
     "Newtonsoft.Json": "9.0.1"
   },

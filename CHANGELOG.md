@@ -1,5 +1,9 @@
 # Moon.Validation changelog
 
+6.0.2
+
+- `Moon.Validation` project migrated to .NET Standard 1.3.
+
 6.0.1
 
 - Support for OWIN ASP.NET MVC applications has been dropped.
