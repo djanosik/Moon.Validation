@@ -119,17 +119,14 @@ namespace Moon.Validation
             protected IEnumerable<ValidationAttribute> GetValidationAttributes(IEnumerable<Attribute> attributes, Type objectType, string propertyName = null)
             {
                 var results = new List<ValidationAttribute>();
+                var stringLocalizer = Store.GetStringLocalizer(objectType);
 
                 foreach (var attribute in attributes.OfType<ValidationAttribute>())
                 {
-                    var validatorName = attribute.GetValidatorName();
-                    var stringLocalizer = Store.GetStringLocalizer(objectType);
-
-                    if (stringLocalizer != null && ShouldUpdateErrorMessage(attribute))
+                    if (stringLocalizer != null)
                     {
-                        attribute.ErrorMessage = propertyName != null
-                            ? GetErrorMessage(stringLocalizer, propertyName, validatorName)
-                            : stringLocalizer[validatorName];
+                        SetErrorMessageKey(stringLocalizer, attribute, propertyName);
+                        attribute.ErrorMessage = stringLocalizer[attribute.ErrorMessage];
                     }
 
                     results.Add(attribute);
@@ -138,13 +135,25 @@ namespace Moon.Validation
                 return results;
             }
 
-            private string GetErrorMessage(IStringLocalizer stringLocalizer, string propertyName, string validatorName)
+            private void SetErrorMessageKey(IStringLocalizer stringLocalizer, ValidationAttribute attribute, string propertyName)
             {
-                var localized = stringLocalizer[$"{propertyName}_{validatorName}"];
-                return localized.ResourceNotFound ? stringLocalizer[$"@_{validatorName}"] : localized;
+                if (CanSetErrorMessageKey(attribute))
+                {
+                    var validatorName = attribute.GetValidatorName();
+
+                    attribute.ErrorMessage = propertyName != null
+                        ? GetErrorMessageKey(stringLocalizer, propertyName, validatorName)
+                        : validatorName;
+                }
             }
 
-            private bool ShouldUpdateErrorMessage(ValidationAttribute attribute)
+            private string GetErrorMessageKey(IStringLocalizer stringLocalizer, string propertyName, string validatorName)
+            {
+                var key = $"{propertyName}_{validatorName}";
+                return stringLocalizer[key].ResourceNotFound ? $"@_{validatorName}" : key;
+            }
+
+            private bool CanSetErrorMessageKey(ValidationAttribute attribute)
                 => string.IsNullOrEmpty(attribute.ErrorMessage) &&
                 string.IsNullOrEmpty(attribute.ErrorMessageResourceName) &&
                 attribute.ErrorMessageResourceType == null;
