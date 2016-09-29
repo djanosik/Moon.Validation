@@ -117,28 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="@_Digits" xml:space="preserve">
+    <value>Pole `{0}` může obsahovat pouze číslice.</value>
+  </data>
+  <data name="@_Double" xml:space="preserve">
+    <value>Pole `{0}` může obsahovat pouze desetinné číslo.</value>
+  </data>
+  <data name="@_GreaterThan" xml:space="preserve">
+    <value>Hodnota pole `{0}` musí být větší než hodnota pole '{1}'.</value>
+  </data>
+  <data name="@_Required" xml:space="preserve">
+    <value>Pole `{0}` je povinné.</value>
+  </data>
   <data name="Digits" xml:space="preserve">
     <value>Číslice</value>
-  </data>
-  <data name="Digits_Digits" xml:space="preserve">
-    <value>Pole `{0}` může obsahovat pouze číslice.</value>
   </data>
   <data name="Double" xml:space="preserve">
     <value>DestinnéČíslo</value>
   </data>
   <data name="Double_Double" xml:space="preserve">
-    <value>Pole `{0}` může obsahovat pouze desetinné číslo.</value>
+    <value>Zadejte prosím desetinné číslo.</value>
   </data>
   <data name="GreaterThanMin" xml:space="preserve">
     <value>VětšíNežMin</value>
   </data>
-  <data name="GreaterThanMin_GreaterThan" xml:space="preserve">
-    <value>Hodnota pole `{0}` musí být větší než hodnota pole '{1}'.</value>
-  </data>
   <data name="MightBeRequired" xml:space="preserve">
     <value>MožnáPovinné</value>
-  </data>
-  <data name="MightBeRequired_Required" xml:space="preserve">
-    <value>Pole `{0}` je povinné.</value>
   </data>
 </root>

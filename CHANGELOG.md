@@ -1,5 +1,9 @@
 # Moon.Validation changelog
 
+6.0.3
+
+- You can now use common validation messages. Replace a property name with `@` (eg. `@_Required`).
+
 6.0.2
 
 - `Moon.Validation` project migrated to .NET Standard 1.3.

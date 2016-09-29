@@ -109,7 +109,7 @@ namespace Moon.Validation
 
                     if (stringLocalizer != null && displayAttribute?.ResourceType == null)
                     {
-                        return stringLocalizer[displayAttribute?.GetName() ?? propertyName];
+                        return displayAttribute?.GetName() ?? stringLocalizer[propertyName];
                     }
                 }
 

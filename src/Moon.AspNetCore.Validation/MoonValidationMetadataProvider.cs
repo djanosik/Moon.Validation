@@ -42,7 +42,7 @@ namespace Moon.AspNetCore.Validation
 
                 if (stringLocalizer != null && displayAttribute?.ResourceType == null)
                 {
-                    context.DisplayMetadata.DisplayName = () => stringLocalizer[displayAttribute?.GetName() ?? propertyName];
+                    context.DisplayMetadata.DisplayName = () => displayAttribute?.GetName() ?? stringLocalizer[propertyName];
                 }
             }
         }
@@ -68,20 +68,15 @@ namespace Moon.AspNetCore.Validation
 
             if (ShouldUpdateErrorMessage(attribute))
             {
-                if (propertyName != null)
-                {
-                    var stringLocalizer = GetStringLocalizer(context.Key);
+                var stringLocalizer = GetStringLocalizer(context.Key);
 
-                    if (stringLocalizer != null)
-                    {
-                        attribute.SetOtherDisplayName(otherName => stringLocalizer[otherName]);
-                    }
-
-                    attribute.ErrorMessage = $"{propertyName}_{validatorName}";
-                }
-                else
+                if (stringLocalizer != null)
                 {
-                    attribute.ErrorMessage = validatorName;
+                    attribute.SetOtherDisplayName(otherName => stringLocalizer[otherName]);
+
+                    attribute.ErrorMessage = propertyName != null
+                        ? GetErrorMessageKey(stringLocalizer, propertyName, validatorName)
+                        : validatorName;
                 }
             }
         }
@@ -98,6 +93,12 @@ namespace Moon.AspNetCore.Validation
             }
 
             return stringLocalizer;
+        }
+
+        private string GetErrorMessageKey(IStringLocalizer stringLocalizer, string propertyName, string validatorName)
+        {
+            var key = $"{propertyName}_{validatorName}";
+            return stringLocalizer[key].ResourceNotFound ? $"@_{validatorName}" : key;
         }
 
         private bool ShouldUpdateErrorMessage(ValidationAttribute attribute)
