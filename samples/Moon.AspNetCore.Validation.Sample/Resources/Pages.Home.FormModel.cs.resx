@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="@_Digits" xml:space="preserve">
-    <value>Pole `{0}` může obsahovat pouze číslice.</value>
+    <value>Pole '{0}' může obsahovat pouze číslice.</value>
   </data>
   <data name="@_Double" xml:space="preserve">
-    <value>Pole `{0}` může obsahovat pouze desetinné číslo.</value>
+    <value>Pole '{0}' může obsahovat pouze desetinné číslo.</value>
   </data>
   <data name="@_EmailAddress" xml:space="preserve">
     <value>Pole '{0}' musí obsahovat e-mailovou adresu.</value>
   </data>
   <data name="@_GreaterThan" xml:space="preserve">
-    <value>Hodnota pole `{0}` musí být větší než hodnota pole '{1}'.</value>
+    <value>Hodnota pole '{0}' musí být větší než hodnota pole '{1}'.</value>
   </data>
   <data name="@_Required" xml:space="preserve">
-    <value>Pole `{0}` je povinné.</value>
+    <value>Pole '{0}' je povinné.</value>
   </data>
   <data name="Digits" xml:space="preserve">
     <value>Číslice</value>
