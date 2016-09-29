@@ -125,12 +125,7 @@ namespace Moon.Validation
                 {
                     if (stringLocalizer != null)
                     {
-                        SetErrorMessageKey(stringLocalizer, attribute, propertyName);
-
-                        if (attribute.ErrorMessage != null)
-                        {
-                            attribute.ErrorMessage = stringLocalizer[attribute.ErrorMessage];
-                        }
+                        UpdateErrorMessage(stringLocalizer, attribute, propertyName);
                     }
 
                     results.Add(attribute);
@@ -139,27 +134,26 @@ namespace Moon.Validation
                 return results;
             }
 
-            private void SetErrorMessageKey(IStringLocalizer stringLocalizer, ValidationAttribute attribute, string propertyName)
+            private void UpdateErrorMessage(IStringLocalizer stringLocalizer, ValidationAttribute attribute, string propertyName)
             {
-                if (CanSetErrorMessageKey(attribute))
+                if (CanUpdateErrorMessage(attribute))
                 {
                     var validatorName = attribute.GetValidatorName();
 
                     attribute.ErrorMessage = propertyName != null
-                        ? GetErrorMessageKey(stringLocalizer, propertyName, validatorName)
-                        : validatorName;
+                        ? GetErrorMessage(stringLocalizer, propertyName, validatorName)
+                        : stringLocalizer[validatorName];
                 }
             }
 
-            private string GetErrorMessageKey(IStringLocalizer stringLocalizer, string propertyName, string validatorName)
+            private string GetErrorMessage(IStringLocalizer stringLocalizer, string propertyName, string validatorName)
             {
-                var key = $"{propertyName}_{validatorName}";
-                return stringLocalizer[key].ResourceNotFound ? $"@_{validatorName}" : key;
+                var localized = stringLocalizer[$"{propertyName}_{validatorName}"];
+                return localized.ResourceNotFound ? stringLocalizer[$"@_{validatorName}"] : localized;
             }
 
-            private bool CanSetErrorMessageKey(ValidationAttribute attribute)
-                => string.IsNullOrEmpty(attribute.ErrorMessage) &&
-                string.IsNullOrEmpty(attribute.ErrorMessageResourceName) &&
+            private bool CanUpdateErrorMessage(ValidationAttribute attribute)
+                => string.IsNullOrEmpty(attribute.ErrorMessageResourceName) &&
                 attribute.ErrorMessageResourceType == null;
         }
 

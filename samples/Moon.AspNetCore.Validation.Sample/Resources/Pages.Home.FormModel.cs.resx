@@ -123,6 +123,9 @@
   <data name="@_Double" xml:space="preserve">
     <value>Pole `{0}` může obsahovat pouze desetinné číslo.</value>
   </data>
+  <data name="@_EmailAddress" xml:space="preserve">
+    <value>Pole '{0}' musí obsahovat e-mailovou adresu.</value>
+  </data>
   <data name="@_GreaterThan" xml:space="preserve">
     <value>Hodnota pole `{0}` musí být větší než hodnota pole '{1}'.</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="Double_Double" xml:space="preserve">
     <value>Zadejte prosím desetinné číslo.</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>EmailováAdresa</value>
   </data>
   <data name="GreaterThanMin" xml:space="preserve">
     <value>VětšíNežMin</value>

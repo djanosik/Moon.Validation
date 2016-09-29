@@ -20,6 +20,9 @@ namespace Moon.AspNetCore.Validation.Sample.Pages.Home
         [Digits]
         public string Digits { get; set; }
 
+        [EmailAddress]
+        public string EmailAddress { get; set; }
+
         [Double]
         public double? Double { get; set; }
 

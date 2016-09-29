@@ -61,7 +61,7 @@ namespace Moon.AspNetCore.Validation
                 foreach (var attribute in validationMetadata.ValidatorMetadata.OfType<ValidationAttribute>())
                 {
                     SetOtherDisplayName(stringLocalizer, attribute);
-                    SetErrorMessageKey(stringLocalizer, context, attribute);
+                    UpdateErrorMessage(stringLocalizer, context, attribute);
                 }
             }
         }
@@ -83,9 +83,9 @@ namespace Moon.AspNetCore.Validation
         private void SetOtherDisplayName(IStringLocalizer stringLocalizer, ValidationAttribute attribute)
             => attribute.SetOtherDisplayName(otherName => stringLocalizer[otherName]);
 
-        private void SetErrorMessageKey(IStringLocalizer stringLocalizer, ValidationMetadataProviderContext context, ValidationAttribute attribute)
+        private void UpdateErrorMessage(IStringLocalizer stringLocalizer, ValidationMetadataProviderContext context, ValidationAttribute attribute)
         {
-            if (CanSetErrorMessageKey(attribute))
+            if (CanUpdateErrorMessage(attribute))
             {
                 var propertyName = context.Key.Name;
                 var validatorName = attribute.GetValidatorName();
@@ -102,9 +102,8 @@ namespace Moon.AspNetCore.Validation
             return stringLocalizer[key].ResourceNotFound ? $"@_{validatorName}" : key;
         }
 
-        private bool CanSetErrorMessageKey(ValidationAttribute attribute)
-            => string.IsNullOrEmpty(attribute.ErrorMessage) &&
-            string.IsNullOrEmpty(attribute.ErrorMessageResourceName) &&
+        private bool CanUpdateErrorMessage(ValidationAttribute attribute)
+            => string.IsNullOrEmpty(attribute.ErrorMessageResourceName) &&
             attribute.ErrorMessageResourceType == null &&
             options.Value.DataAnnotationLocalizerProvider != null;
     }

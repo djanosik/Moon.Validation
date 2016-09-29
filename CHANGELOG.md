@@ -1,8 +1,8 @@
 # Moon.Validation changelog
 
-6.0.6
+6.0.7
 
-- You can now use custom resource keys with `DataValidator`.
+- Unified behavior of `DataValidator` and ASP.NET Core integration.
 
 6.0.3
 

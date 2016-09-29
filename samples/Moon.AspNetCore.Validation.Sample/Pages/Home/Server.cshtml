@@ -31,13 +31,20 @@
     </style>
 </head>
 <body>
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm(FormMethod.Post, new { novalidate = "novalidate" })) {
         <div class="label">
             @Html.LabelFor(m => m.Digits):
         </div>
         <div class="editor">
             @Html.EditorFor(m => m.Digits)
             @Html.ValidationMessageFor(m => m.Digits)
+        </div>
+        <div class="label">
+            @Html.LabelFor(m => m.EmailAddress):
+        </div>
+        <div class="editor">
+            @Html.EditorFor(m => m.EmailAddress)
+            @Html.ValidationMessageFor(m => m.EmailAddress)
         </div>
         <div class="label">
             @Html.LabelFor(m => m.Double):
