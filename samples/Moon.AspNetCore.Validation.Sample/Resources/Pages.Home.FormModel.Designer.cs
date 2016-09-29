@@ -60,20 +60,56 @@ namespace Moon.AspNetCore.Validation.Sample.Resources {
         }
         
         /// <summary>
+        ///    Looks up a localized string similar to The field &apos;{0}&apos; can only contain digits..
+        /// </summary>
+        public static string _Digits {
+            get {
+                return ResourceManager.GetString("_Digits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to The field &apos;{0}&apos; can only contain floating point number..
+        /// </summary>
+        public static string _Double {
+            get {
+                return ResourceManager.GetString("_Double", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to The field &apos;{0}&apos; must contain a valid e-mail address..
+        /// </summary>
+        public static string _EmailAddress {
+            get {
+                return ResourceManager.GetString("_EmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to The field &apos;{0}&apos; must be greater than the field &apos;{1}&apos;..
+        /// </summary>
+        public static string _GreaterThan {
+            get {
+                return ResourceManager.GetString("_GreaterThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to The field &apos;{0}&apos; is required..
+        /// </summary>
+        public static string _Required {
+            get {
+                return ResourceManager.GetString("_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    Looks up a localized string similar to Digits.
         /// </summary>
         public static string Digits {
             get {
                 return ResourceManager.GetString("Digits", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to The field `{0}` can only contain digits..
-        /// </summary>
-        public static string Digits_Digits {
-            get {
-                return ResourceManager.GetString("Digits_Digits", resourceCulture);
             }
         }
         
@@ -87,11 +123,20 @@ namespace Moon.AspNetCore.Validation.Sample.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to The field `{0}` can only contain floating point number..
+        ///    Looks up a localized string similar to Please enter a floating point number..
         /// </summary>
         public static string Double_Double {
             get {
                 return ResourceManager.GetString("Double_Double", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    Looks up a localized string similar to EmailAddress.
+        /// </summary>
+        public static string EmailAddress {
+            get {
+                return ResourceManager.GetString("EmailAddress", resourceCulture);
             }
         }
         
@@ -105,29 +150,11 @@ namespace Moon.AspNetCore.Validation.Sample.Resources {
         }
         
         /// <summary>
-        ///    Looks up a localized string similar to The field `{0}` must be greater than the field &apos;{1}&apos;..
-        /// </summary>
-        public static string GreaterThanMin_GreaterThan {
-            get {
-                return ResourceManager.GetString("GreaterThanMin_GreaterThan", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///    Looks up a localized string similar to MightBeRequired.
         /// </summary>
         public static string MightBeRequired {
             get {
                 return ResourceManager.GetString("MightBeRequired", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///    Looks up a localized string similar to The field `{0}` is required..
-        /// </summary>
-        public static string MightBeRequired_Required {
-            get {
-                return ResourceManager.GetString("MightBeRequired_Required", resourceCulture);
             }
         }
     }

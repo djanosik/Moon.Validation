@@ -99,7 +99,7 @@ namespace Moon.AspNetCore.Validation
         private string GetErrorMessageKey(IStringLocalizer stringLocalizer, string propertyName, string validatorName)
         {
             var key = $"{propertyName}_{validatorName}";
-            return stringLocalizer[key].ResourceNotFound ? $"@_{validatorName}" : key;
+            return stringLocalizer[key].ResourceNotFound ? $"_{validatorName}" : key;
         }
 
         private bool CanUpdateErrorMessage(ValidationAttribute attribute)

@@ -1,12 +1,12 @@
 # Moon.Validation changelog
 
+6.0.8
+
+- You can now use common validation messages. Simply ommit the property name in resource key (eg. `_Required`).
+
 6.0.7
 
 - Unified behavior of `DataValidator` and ASP.NET Core integration.
-
-6.0.3
-
-- You can now use common validation messages. Replace a property name with `@` (eg. `@_Required`).
 
 6.0.2
 

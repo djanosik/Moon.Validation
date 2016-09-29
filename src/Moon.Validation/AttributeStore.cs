@@ -149,7 +149,7 @@ namespace Moon.Validation
             private string GetErrorMessage(IStringLocalizer stringLocalizer, string propertyName, string validatorName)
             {
                 var localized = stringLocalizer[$"{propertyName}_{validatorName}"];
-                return localized.ResourceNotFound ? stringLocalizer[$"@_{validatorName}"] : localized;
+                return localized.ResourceNotFound ? stringLocalizer[$"_{validatorName}"] : localized;
             }
 
             private bool CanUpdateErrorMessage(ValidationAttribute attribute)
