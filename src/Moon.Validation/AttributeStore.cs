@@ -126,7 +126,11 @@ namespace Moon.Validation
                     if (stringLocalizer != null)
                     {
                         SetErrorMessageKey(stringLocalizer, attribute, propertyName);
-                        attribute.ErrorMessage = stringLocalizer[attribute.ErrorMessage];
+
+                        if (attribute.ErrorMessage != null)
+                        {
+                            attribute.ErrorMessage = stringLocalizer[attribute.ErrorMessage];
+                        }
                     }
 
                     results.Add(attribute);

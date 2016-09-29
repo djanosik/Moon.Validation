@@ -1,5 +1,9 @@
 # Moon.Validation changelog
 
+6.0.6
+
+- You can now use custom resource keys with `DataValidator`.
+
 6.0.3
 
 - You can now use common validation messages. Replace a property name with `@` (eg. `@_Required`).
