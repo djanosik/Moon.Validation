@@ -1,4 +1,4 @@
-version: 6.0.{build}
+version: 7.0.{build}
 init:
   - git config --global core.autocrlf true
 install:

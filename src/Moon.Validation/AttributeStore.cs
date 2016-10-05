@@ -47,7 +47,7 @@ namespace Moon.Validation
         public string GetPropertyDisplayName(ValidationContext propertyContext)
         {
             var typeItem = GetTypeItem(propertyContext.ObjectType);
-            var propertyItem = typeItem.GetPropertyItem(propertyContext.MemberName);
+            var propertyItem = typeItem.GetPropertyItem(propertyContext.MemberName.Split('.').Last());
             return propertyItem.DisplayName;
         }
 
@@ -58,7 +58,7 @@ namespace Moon.Validation
         public IEnumerable<ValidationAttribute> GetPropertyValidationAttributes(ValidationContext propertyContext)
         {
             var typeItem = GetTypeItem(propertyContext.ObjectType);
-            var propertyItem = typeItem.GetPropertyItem(propertyContext.MemberName);
+            var propertyItem = typeItem.GetPropertyItem(propertyContext.MemberName.Split('.').Last());
             return propertyItem.ValidationAttributes;
         }
 
@@ -101,19 +101,20 @@ namespace Moon.Validation
 
             protected string GetDisplayName(IEnumerable<Attribute> attributes, Type objectType, string propertyName = null)
             {
-                var displayAttribute = attributes.OfType<DisplayAttribute>().FirstOrDefault();
-
                 if (propertyName != null)
                 {
                     var stringLocalizer = Store.GetStringLocalizer(objectType);
+                    var displayAttribute = attributes.OfType<DisplayAttribute>().FirstOrDefault();
 
                     if (stringLocalizer != null && displayAttribute?.ResourceType == null)
                     {
                         return displayAttribute?.GetName() ?? stringLocalizer[propertyName];
                     }
+
+                    return displayAttribute?.GetName() ?? propertyName;
                 }
 
-                return displayAttribute?.GetName();
+                return objectType.Name;
             }
 
             protected IEnumerable<ValidationAttribute> GetValidationAttributes(IEnumerable<Attribute> attributes, Type objectType, string propertyName = null)

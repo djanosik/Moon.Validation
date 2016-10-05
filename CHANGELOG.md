@@ -1,5 +1,10 @@
 # Moon.Validation changelog
 
+7.0.1
+
+- Asynchronous validation (`IAsyncValidatableObject`) has been removed.
+- Recursive validation has been added.
+
 6.0.8
 
 - You can now use common validation messages. Simply ommit the property name in resource key (eg. `_Required`).
