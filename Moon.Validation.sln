@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.25920.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{41B8C193-6DD7-49FA-9081-2E2727D9E446}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{41B8C1
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
 		CHANGELOG.md = CHANGELOG.md
+		Common.props = Common.props
 		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
@@ -17,17 +18,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{41B8C1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D8C2EE1-2C0B-4C8D-AF0D-B8B7C5A5E33B}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.Validation", "src\Moon.Validation\Moon.Validation.xproj", "{761218A5-A165-41AC-BEC4-DB267D66D120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.Validation", "src\Moon.Validation\Moon.Validation.csproj", "{761218A5-A165-41AC-BEC4-DB267D66D120}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.Windows.Validation", "src\Moon.Windows.Validation\Moon.Windows.Validation.xproj", "{70FDA544-F970-4DF0-B056-E6257896E463}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.Windows.Validation", "src\Moon.Windows.Validation\Moon.Windows.Validation.csproj", "{70FDA544-F970-4DF0-B056-E6257896E463}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{ED744425-6B57-4EB2-911F-930636533845}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.AspNetCore.Validation", "src\Moon.AspNetCore.Validation\Moon.AspNetCore.Validation.xproj", "{F9EC5637-9D75-4A6D-8BC3-83726C170994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.AspNetCore.Validation", "src\Moon.AspNetCore.Validation\Moon.AspNetCore.Validation.csproj", "{F9EC5637-9D75-4A6D-8BC3-83726C170994}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.AspNetCore.Validation.Sample", "samples\Moon.AspNetCore.Validation.Sample\Moon.AspNetCore.Validation.Sample.xproj", "{4BEAE5A2-1D98-4D10-8B3A-C8874AFA6599}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.AspNetCore.Validation.Sample", "samples\Moon.AspNetCore.Validation.Sample\Moon.AspNetCore.Validation.Sample.csproj", "{4BEAE5A2-1D98-4D10-8B3A-C8874AFA6599}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Moon.Validation.Sample", "samples\Moon.Validation.Sample\Moon.Validation.Sample.xproj", "{54124730-552A-4EA0-835B-B2ED3E98690E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moon.Validation.Sample", "samples\Moon.Validation.Sample\Moon.Validation.Sample.csproj", "{54124730-552A-4EA0-835B-B2ED3E98690E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,26 +36,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{761218A5-A165-41AC-BEC4-DB267D66D120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{761218A5-A165-41AC-BEC4-DB267D66D120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761218A5-A165-41AC-BEC4-DB267D66D120}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{761218A5-A165-41AC-BEC4-DB267D66D120}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{761218A5-A165-41AC-BEC4-DB267D66D120}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{761218A5-A165-41AC-BEC4-DB267D66D120}.Release|Any CPU.Build.0 = Release|Any CPU
 		{70FDA544-F970-4DF0-B056-E6257896E463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{70FDA544-F970-4DF0-B056-E6257896E463}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70FDA544-F970-4DF0-B056-E6257896E463}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70FDA544-F970-4DF0-B056-E6257896E463}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9EC5637-9D75-4A6D-8BC3-83726C170994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9EC5637-9D75-4A6D-8BC3-83726C170994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70FDA544-F970-4DF0-B056-E6257896E463}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{70FDA544-F970-4DF0-B056-E6257896E463}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F9EC5637-9D75-4A6D-8BC3-83726C170994}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{F9EC5637-9D75-4A6D-8BC3-83726C170994}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{F9EC5637-9D75-4A6D-8BC3-83726C170994}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9EC5637-9D75-4A6D-8BC3-83726C170994}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4BEAE5A2-1D98-4D10-8B3A-C8874AFA6599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BEAE5A2-1D98-4D10-8B3A-C8874AFA6599}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BEAE5A2-1D98-4D10-8B3A-C8874AFA6599}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BEAE5A2-1D98-4D10-8B3A-C8874AFA6599}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BEAE5A2-1D98-4D10-8B3A-C8874AFA6599}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BEAE5A2-1D98-4D10-8B3A-C8874AFA6599}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{54124730-552A-4EA0-835B-B2ED3E98690E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54124730-552A-4EA0-835B-B2ED3E98690E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54124730-552A-4EA0-835B-B2ED3E98690E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54124730-552A-4EA0-835B-B2ED3E98690E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54124730-552A-4EA0-835B-B2ED3E98690E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{54124730-552A-4EA0-835B-B2ED3E98690E}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

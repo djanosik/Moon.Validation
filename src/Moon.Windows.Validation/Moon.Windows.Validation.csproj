@@ -1,0 +1,30 @@
+﻿<Project ToolsVersion="15.0">
+  <Import Project="..\..\Common.props" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+    <Description>Extensions for WPF validation framework.</Description>
+    <PackageTags>moon;wpf;validation;annotations</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="**\*.cs" />
+    <EmbeddedResource Include="**\*.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moon.Validation\Moon.Validation.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Sdk">
+      <Version>1.0.0-alpha-20161104-2</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
