@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Localization;
 using Moon.Validation;
 
-namespace Moon.AspNetCore.Validation
+namespace Moon.AspNetCore.Validation.Adapters
 {
     /// <summary>
     /// Provides a model validator for the specified validator type.

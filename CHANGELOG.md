@@ -1,5 +1,12 @@
 # Moon.Validation changelog
 
+7.0.2
+
+- Removed unnecessary dependencies.
+- Added `RequiredEmpty` validator that can be used to prevent spam.
+- The `DataValidator` can recursively validate `IEnumerable` items.
+- Fixed issues with circular references and primitive types.
+
 7.0.1
 
 - Asynchronous validation (`IAsyncValidatableObject`) has been removed.

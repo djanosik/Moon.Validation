@@ -2,6 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
+// ReSharper disable once CheckNamespace
+
 namespace Moon.Validation
 {
     /// <summary>

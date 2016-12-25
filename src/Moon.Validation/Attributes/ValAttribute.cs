@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+// ReSharper disable once CheckNamespace
+
 namespace Moon.Validation
 {
     /// <summary>

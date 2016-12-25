@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Moon.AspNetCore.Validation;
 
+// ReSharper disable once CheckNamespace
+
 namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>

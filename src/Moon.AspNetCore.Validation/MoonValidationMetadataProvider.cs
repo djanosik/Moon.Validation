@@ -104,7 +104,7 @@ namespace Moon.AspNetCore.Validation
 
         private bool CanUpdateErrorMessage(ValidationAttribute attribute)
             => string.IsNullOrEmpty(attribute.ErrorMessageResourceName) &&
-            attribute.ErrorMessageResourceType == null &&
-            options.Value.DataAnnotationLocalizerProvider != null;
+                attribute.ErrorMessageResourceType == null &&
+                options.Value.DataAnnotationLocalizerProvider != null;
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using Moon.Validation.Operators;
 
+// ReSharper disable once CheckNamespace
+
 namespace Moon.Validation
 {
     /// <summary>

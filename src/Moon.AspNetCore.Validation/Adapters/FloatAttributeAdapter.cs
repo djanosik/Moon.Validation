@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Localization;
 using Moon.Validation;
 
-namespace Moon.AspNetCore.Validation
+namespace Moon.AspNetCore.Validation.Adapters
 {
     /// <summary>
     /// Adapter for <see cref="FloatAttribute" /> attribute.

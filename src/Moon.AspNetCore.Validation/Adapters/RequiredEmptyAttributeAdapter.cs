@@ -4,16 +4,16 @@ using Moon.Validation;
 namespace Moon.AspNetCore.Validation.Adapters
 {
     /// <summary>
-    /// Adapter for <see cref="RequiredIfNotEmptyAttribute" /> attribute.
+    /// Adapter for <see cref="RequiredEmptyAttribute" /> attribute.
     /// </summary>
-    public class RequiredIfNotEmptyAttributeAdapter : DependentAttributeAdapter<RequiredIfNotEmptyAttribute>
+    public class RequiredEmptyAttributeAdapter : AttributeAdapter<RequiredEmptyAttribute>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RequiredIfNotEmptyAttributeAdapter" /> class.
+        /// Initializes a new instance of the <see cref="RequiredEmptyAttributeAdapter" /> class.
         /// </summary>
         /// <param name="attribute">The validation attribute.</param>
         /// <param name="stringLocalizer">The string localizer.</param>
-        public RequiredIfNotEmptyAttributeAdapter(RequiredIfNotEmptyAttribute attribute, IStringLocalizer stringLocalizer)
+        public RequiredEmptyAttributeAdapter(RequiredEmptyAttribute attribute, IStringLocalizer stringLocalizer)
             : base(attribute, stringLocalizer)
         {
         }
@@ -22,6 +22,6 @@ namespace Moon.AspNetCore.Validation.Adapters
         /// Gets the type of client validation.
         /// </summary>
         protected override string ValidationType
-            => "requiredifnotempty";
+            => "requiredempty";
     }
 }

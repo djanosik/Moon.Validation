@@ -29,18 +29,26 @@ namespace Moon.Validation.Sample
         [Required]
         public string Name { get; set; }
 
-        public ThirdModel Third { get; set; } = new ThirdModel();
+        public ThirdModel[] Thirds { get; set; } = new[] { new ThirdModel() };
     }
 
-    public class ThirdModel : IValidatableObject
+    public class ThirdModel
+    {
+        [Required]
+        public string Name { get; set; }
+
+        public ForthModel Forth { get; set; } = new ForthModel();
+    }
+
+    public class ForthModel : IValidatableObject
     {
         public string Name { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (Name != "Third")
+            if (Name != "Forth")
             {
-                yield return new ValidationResult("The Name should be 'Third'.", new[] { nameof(Name) });
+                yield return new ValidationResult("The Name should be 'Forth'.", new[] { nameof(Name) });
             }
         }
     }
