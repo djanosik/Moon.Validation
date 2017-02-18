@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\Common.props" />
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFrameworks>net46;netstandard1.6</TargetFrameworks>
     <Description>Extensions for ASP.NET Core MVC validation framework.</Description>
     <PackageTags>moon;asp.net;validation;annotations</PackageTags>
   </PropertyGroup>
@@ -9,6 +9,6 @@
     <ProjectReference Include="..\Moon.Validation\Moon.Validation.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Moon.AspNetCore.Mvc" Version="3.0.1" />
+    <PackageReference Include="Moon.AspNetCore.Mvc" Version="3.0.2" />
   </ItemGroup>
 </Project>
