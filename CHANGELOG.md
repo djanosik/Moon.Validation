@@ -1,5 +1,9 @@
 # Moon.Validation changelog
 
+7.1.2
+
+- Ensures compatibility with latest Moon.* libraries.
+
 7.1.1
 
 - All libraries are targeting .NET Standard (except `Moon.Windows.Validation`).
