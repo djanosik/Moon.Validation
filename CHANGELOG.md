@@ -1,6 +1,6 @@
 # Moon.Validation changelog
 
-7.1.2
+7.1.3
 
 - Ensures compatibility with latest Moon.* libraries.
 
