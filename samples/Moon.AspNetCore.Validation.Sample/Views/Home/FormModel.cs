@@ -1,20 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Moon.Validation;
 
-namespace Moon.AspNetCore.Validation.Sample.Pages.Home
+namespace Moon.AspNetCore.Validation.Sample.Views.Home
 {
-    public enum Enum1
-    {
-        Required,
-        Other
-    }
-
-    public enum Enum2
-    {
-        First,
-        Second
-    }
-
     public class FormModel
     {
         [Digits]
@@ -48,5 +36,17 @@ namespace Moon.AspNetCore.Validation.Sample.Pages.Home
 
         [RequiredIfNotEqual("Min", 11)]
         public string RequiredIfMinNotEqualTo11 { get; set; }
+    }
+
+    public enum Enum1
+    {
+        Required,
+        Other
+    }
+
+    public enum Enum2
+    {
+        First,
+        Second
     }
 }

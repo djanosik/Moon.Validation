@@ -1,5 +1,9 @@
 # Moon.Validation changelog
 
+8.0.0
+
+- Compatibility with ASP.NET Core 2.0.
+
 7.1.3
 
 - Ensures compatibility with latest Moon.* libraries.

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.DataAnnotations;
-using Microsoft.AspNetCore.Mvc.DataAnnotations.Internal;
 using Microsoft.Extensions.Localization;
 using Moon.AspNetCore.Validation.Adapters;
 using Moon.Validation;

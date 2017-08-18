@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Moon.AspNetCore.Validation.Sample.Pages.Home
+namespace Moon.AspNetCore.Validation.Sample.Views.Home
 {
     public class HomeController : Controller
     {
